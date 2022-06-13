@@ -1,17 +1,19 @@
 # Project Name
+	
+### Team Members:
+- Jonathan Andrews
+- Lu Bai 
+- Ben Prentice
+- Irving Donaldson
+- Sean Angle
 
-- Project Team Members:
-	-Jonathan Andrews
-	-Lu Bai
-	-Ben Prentice
-	-Irving Donaldson
-	-Sean Angle
+# Description 
 
-- What you're creating?
+### What you're creating?
 
-- Who you’re doing it for, your audience (may be same as the previous question)?
+### Who you’re doing it for, your audience (may be same as the previous question)?
 
-- Why you’re doing this, the impact or change you hope to make?
+### Why you’re doing this, the impact or change you hope to make?
 
 
 
@@ -35,7 +37,7 @@
 - What do we wish we had to help complete the project?
 
 ## Technologies Used
-- Tech 1 - version 1.0
+- Tech 1 - version 1.0 &emsp; [This example takes you to google](https://www.google.com)
 - Tech 2 - version 2.0
 - Tech 3 - version 3.0
 
@@ -43,11 +45,20 @@
 ## Features
 List the ready features here:
 
-- Give each feature a name.
-
-- Describe what it does and who or what uses it.
-
-- What user stories correspond to this feature.
+- Feature 1:
+	- Give each feature a name.
+	- Describe what it does and who or what uses it.
+	- What user stories correspond to this feature.
+	
+- Feature 2:
+	- Give each feature a name.
+	- Describe what it does and who or what uses it.
+	- What user stories correspond to this feature.
+	
+- Feature 3:
+	- Give each feature a name.
+	- Describe what it does and who or what uses it.
+	- What user stories correspond to this feature.
 
 
 ## Screenshots
