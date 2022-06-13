@@ -4,8 +4,8 @@ Ideas:
 
 - Time Wizard
 - Bounty Tasker
-- &nbsp;
-- &nbsp;
+- Task Slayer
+- Habit Pal(s)
 
 	
 ### Team Members:
