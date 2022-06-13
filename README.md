@@ -41,7 +41,7 @@ Ideas:
 
 ## General Information
 
-- IMAGE/PICTURE/ICON GOES HERE 
+- http://getdrawings.com/cliparts/cute-monster-clipart-6.png
 	
 - What do we wish we had to help complete the project?
 
