@@ -3,6 +3,7 @@
 > Live demo [_here_](https://www.example.com). <!-- If you have the project hosted somewhere, include the link here. -->
 
 ## Table of Contents
+* [Description](#description-information)
 * [General Info](#general-information)
 * [Technologies Used](#technologies-used)
 * [Features](#features)
@@ -15,14 +16,20 @@
 * [Contact](#contact)
 <!-- * [License](#license) -->
 
+## Description
+- Who you’re working with (you and your team members)?
+
+- What you're creating?
+
+- Who you’re doing it for, your audience (may be same as the previous question)?
+
+- Why you’re doing this, the impact or change you hope to make?
 
 ## General Information
-- Provide general information about your project here.
-- What problem does it (intend to) solve?
-- What is the purpose of your project?
-- Why did you undertake it?
-<!-- You don't have to answer all the questions - just the ones relevant to your project. -->
-
+- IMAGE/PICTURE/ICON GOES HERE 
+	![Example screenshot](./img/screenshot.png) <!-- If you have screenshots you'd like to share, include them here. -->
+	
+- What do we wish we had to help complete the project?
 
 ## Technologies Used
 - Tech 1 - version 1.0
@@ -32,9 +39,9 @@
 
 ## Features
 List the ready features here:
-- Awesome feature 1
-- Awesome feature 2
-- Awesome feature 3
+- Give each feature a name.
+- Describe what it does and who or what uses it.
+- What user stories correspond to this feature.
 
 
 ## Screenshots
