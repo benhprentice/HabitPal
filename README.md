@@ -29,7 +29,7 @@ Ideas:
 ### Why you’re doing this, the impact or change you hope to make?
 - We hope to introduce a small change to time management and bullet lists that can transform them into a more interactive and fun
 	experience. This can help impact the user's view of producutivity, and especially help blur the barrier
-	between responsibility centered life and enjoyment.
+	between responsibility centered life and enjoyment. 
 
 
 ## Table of Contents
