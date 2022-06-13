@@ -1,9 +1,16 @@
 # Project Name
-> Outline a brief description of your project.
-> Live demo [_here_](https://www.example.com). <!-- If you have the project hosted somewhere, include the link here. -->
+
+- Who you’re working with (you and your team members)?
+
+- What you're creating?
+
+- Who you’re doing it for, your audience (may be same as the previous question)?
+
+- Why you’re doing this, the impact or change you hope to make?
+
+
 
 ## Table of Contents
-* [Description](#description-information)
 * [General Info](#general-information)
 * [Technologies Used](#technologies-used)
 * [Features](#features)
@@ -15,15 +22,6 @@
 * [Acknowledgements](#acknowledgements)
 * [Contact](#contact)
 <!-- * [License](#license) -->
-
-## Description
-- Who you’re working with (you and your team members)?
-
-- What you're creating?
-
-- Who you’re doing it for, your audience (may be same as the previous question)?
-
-- Why you’re doing this, the impact or change you hope to make?
 
 ## General Information
 - IMAGE/PICTURE/ICON GOES HERE 
