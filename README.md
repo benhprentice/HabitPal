@@ -1,6 +1,11 @@
 # Project Name
 
-- Who you’re working with (you and your team members)?
+- Project Team Members:
+	-Jonathan Andrews
+	-Lu Bai
+	-Ben Prentice
+	-Irving Donaldson
+	-Sean Angle
 
 - What you're creating?
 
@@ -24,8 +29,8 @@
 <!-- * [License](#license) -->
 
 ## General Information
+
 - IMAGE/PICTURE/ICON GOES HERE 
-	![Example screenshot](./img/screenshot.png) <!-- If you have screenshots you'd like to share, include them here. -->
 	
 - What do we wish we had to help complete the project?
 
@@ -87,7 +92,7 @@ Give credit here.
 
 
 ## Contact
-Created by [@flynerdpl](https://www.flynerd.pl/) - feel free to contact me!
+
 
 
 <!-- Optional -->
