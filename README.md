@@ -1,4 +1,12 @@
 # Project Name
+
+Ideas:
+
+- Time Wizard
+- &nbsp;
+- &nbsp;
+- &nbsp;
+
 	
 ### Team Members:
 - Jonathan Andrews
@@ -6,6 +14,7 @@
 - Ben Prentice
 - Irving Donaldson
 - Sean Angle
+
 
 # Description 
 
@@ -45,17 +54,17 @@
 ## Features
 List the ready features here:
 
-- Feature 1:
+- Feature 1: Sign Up/ Sign In
 	- Give each feature a name.
 	- Describe what it does and who or what uses it.
 	- What user stories correspond to this feature.
 	
-- Feature 2:
+- Feature 2: Task Management System
 	- Give each feature a name.
 	- Describe what it does and who or what uses it.
 	- What user stories correspond to this feature.
 	
-- Feature 3:
+- Feature 3: Avatar Selection
 	- Give each feature a name.
 	- Describe what it does and who or what uses it.
 	- What user stories correspond to this feature.
@@ -96,10 +105,7 @@ To do:
 
 
 ## Acknowledgements
-Give credit here.
-- This project was inspired by...
-- This project was based on [this tutorial](https://www.example.com).
-- Many thanks to...
+
 
 
 ## Contact
