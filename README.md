@@ -3,7 +3,7 @@
 Ideas:
 
 - Time Wizard
-- &nbsp;
+- Bounty Tasker
 - &nbsp;
 - &nbsp;
 
