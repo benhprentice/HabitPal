@@ -44,8 +44,8 @@ Ideas:
 - http://getdrawings.com/cliparts/cute-monster-clipart-6.png
 	
 - What do we wish we had to help complete the project?
-- A database
-- Code for a tamagotchi 
+	- A database
+	- Code for a tamagotchi 
 
 ## Technologies Used
 - Tech 1 - Visual Studio Code ( https://code.visualstudio.com/ )
