@@ -46,9 +46,9 @@ Ideas:
 - What do we wish we had to help complete the project?
 
 ## Technologies Used
-- Tech 1 - Visual Studio Code
-- Tech 2 - Python/Flask
-- Tech 3 - MySQL
+- Tech 1 - Visual Studio Code ( https://code.visualstudio.com/ )
+- Tech 2 - Python/Flask ( https://flask.palletsprojects.com/en/2.1.x/ (
+- Tech 3 - MySQL ( https://www.mysql.com/ )
 
 
 ## Features
