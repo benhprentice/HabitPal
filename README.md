@@ -73,7 +73,7 @@ List the ready features here:
 	- We want to encourage our users to be productive by giving them in game currency if they finish a task.
 	
 - Feature 3: Avatar Selection
-	- Give each feature a name.
+	- Users Avatar.
 	- Users can use in game currency to customize their avatar.
 	- We want our user to have their own avarars.
 
