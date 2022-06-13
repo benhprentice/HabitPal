@@ -41,9 +41,11 @@ Ideas:
 
 ## General Information
 
-- IMAGE/PICTURE/ICON GOES HERE 
+- IMAGE/PICTURE/ICON GOES HERE  
 	
-- What do we wish we had to help complete the project?
+- What do we wish we had to help complete the project? 
+- Access to a data base
+
 
 ## Technologies Used
 - Tech 1 - Visual Studio Code
