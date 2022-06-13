@@ -19,11 +19,17 @@ Ideas:
 # Description 
 
 ### What you're creating?
+- A task manager app stylized as a to-do list, where task completion affects a virtual pet's health and happiness.
 
 ### Who you’re doing it for, your audience (may be same as the previous question)?
+- The audience will be users that document their productivity or organize their daily tasks and errands, such as
+	professionals, students, workers, etc. These types of users will also have familiarity/preference for 
+	gaming, non-demanding challenges, and fun variations of technology based utilities. 
 
 ### Why you’re doing this, the impact or change you hope to make?
-
+- We hope to introduce a small change to time management and bullet lists that can transform them into a more interactive and fun
+	experience. This can help impact the user's view of producutivity, and especially help blur the barrier
+	between responsibility centered life and enjoyment.
 
 
 ## Table of Contents
