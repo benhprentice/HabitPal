@@ -39,8 +39,11 @@
 
 ## Features
 List the ready features here:
+
 - Give each feature a name.
+
 - Describe what it does and who or what uses it.
+
 - What user stories correspond to this feature.
 
 
