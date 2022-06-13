@@ -46,9 +46,9 @@ Ideas:
 - What do we wish we had to help complete the project?
 
 ## Technologies Used
-- Tech 1 - version 1.0 &emsp; [This example takes you to google](https://www.google.com)
-- Tech 2 - version 2.0
-- Tech 3 - version 3.0
+- Tech 1 - Visual Studio Code
+- Tech 2 - Flask/Python
+- Tech 3 - MySQL Database
 
 
 ## Features
