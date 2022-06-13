@@ -57,20 +57,19 @@ Ideas:
 List the ready features here:
 
 - Feature 1: Sign Up/ Sign In
-	- Give each feature a name.
-	- Describe what it does and who or what uses it.
-	- What user stories correspond to this feature.
+	- Sign up and log in.
+	- Allow users to make their own account for the website/app.
+	- We want our users to be able to save their game progress, also be able to rejoin. And allow users to creat their unique profile.
 	
 - Feature 2: Task Management System
-	- Give each feature a name.
-	- Describe what it does and who or what uses it.
-	- What user stories correspond to this feature.
+	- Task calendar.
+	- Allow users to input their daily task they need to finish like a calendar. Users will be able to mark their task finished or unfinished themselves.
+	- We want to encourage our users to be productive by giving them in game currency if they finish a task.
 	
 - Feature 3: Avatar Selection
 	- Give each feature a name.
-	- Describe what it does and who or what uses it.
-	- What user stories correspond to this feature.
-
+	- Users can use in game currency to customize their avatar.
+	- We want our user to have their own avarars.
 
 ## Screenshots
 ![Example screenshot](./img/screenshot.png)
