@@ -2,10 +2,7 @@
 
 Ideas:
 
-- Time Wizard
-- Bounty Tasker
-- Task Slayer
-- Habit Pal(s)
+- Habit Pal
 
 	
 ### Team Members:
