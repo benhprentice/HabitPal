@@ -69,7 +69,7 @@ List the ready features here:
 	- Allow users to input their daily task they need to finish like a calendar. Users will be able to mark their task finished or unfinished themselves.
 	- We want to encourage our users to be productive by giving them in game currency if they finish a task.
 	
-- Feature 3: Avatar Selection
+- Feature 3: Avatar Selection 
 	- Users Avatar.
 	- Users can use in game currency to customize their avatar.
 	- We want our user to have their own avarars.
