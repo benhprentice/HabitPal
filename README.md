@@ -7,7 +7,7 @@ Ideas:
 	
 ### Team Members:
 - Jonathan Andrews
-- Lu Bai  
+- Lu Bai 
 - Ben Prentice
 - Irving Donaldson
 - Sean Angle
