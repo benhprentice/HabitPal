@@ -1,7 +1,7 @@
-import os
+import os.path
 import sqlite3
 
-from flask import Flask, render_template
+from flask import Flask, render_template, session
 from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
@@ -12,8 +12,9 @@ db_path = os.path.join(BASE_DIR, "db.sqlite")
 conn = sqlite3.connect(db_path, check_same_thread=False)
 
 cursor_setup = conn.cursor()
-cursor_setup.execute('CREATE TABLE IF NOT EXISTS users(firstname text, lastname text, email text, username text, password text)')
+cursor_setup.execute('CREATE TABLE IF NOT EXISTS users(username text, email text, password text)')
 conn.commit()
+cursor_setup.close()
 
 @app.route('/')
 def home():
