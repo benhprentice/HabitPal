@@ -15,6 +15,7 @@
     color: white;
     text-align: center;
     opacity: 75%;
+   
 }
 
 /* Style all font awesome icons */
@@ -46,7 +47,8 @@
 }
 
 .app {
-    width: 60%;
+    width: 50%;
+    
     
   }
 
