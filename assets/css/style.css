@@ -1,27 +1,51 @@
 
-.container {
-    background-color: black;
-    margin: auto;
-    
+.main-container{
+    width: 100%;
 }
-p {
-    color : blue;
-    text-align: center;
-   
-}
-
-.header {
-    color: red;
-    font-size: 100px;
+.jumbotron{
     text-align: center;
 }
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: grey;
+    color: white;
+    text-align: center;
+}
 
-.app {
-    
+/* Style all font awesome icons */
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+}
+  
+/* Add a hover effect if you want */
+.fa:hover {
+    opacity: 0.7;
+}
+  
+/* Set a specific color for each brand */
+  
+/* Facebook */
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+  
+/* Twitter */
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
 }
 
 .app {
     width: 60%;
+    
   }
 
   @media (max-width:768px) {
