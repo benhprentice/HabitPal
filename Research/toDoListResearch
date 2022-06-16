@@ -14,4 +14,6 @@ Local storage will be important, because this ensures that when the webpage is r
 won't be lost. This is a temporary implementation for development sake, as the final product will
 have database functionality. Good UI is important, so aesthetics will include contrasting text 
 from background color, sans serif font, a clear indication of buttons and their functionalities
-that users are used to, and maybe a light and dark mode in late stage development.
+that users are used to, and maybe a light and dark mode in late stage development. In addition,
+it is essential to know wether implementing this funtion below tha avatar or on a different tab 
+entirely is important.
