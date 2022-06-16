@@ -2,6 +2,7 @@
 .main-container{
     width: 100%;
 }
+
 .jumbotron{
     text-align: center;
 }
@@ -13,6 +14,7 @@
     background-color: grey;
     color: white;
     text-align: center;
+    opacity: 75%;
 }
 
 /* Style all font awesome icons */
