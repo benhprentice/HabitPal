@@ -1,4 +1,3 @@
-
 // On app load, get all tasks from localStorage
 window.onload = loadTasks;
 
@@ -17,18 +16,18 @@ function loadTasks() {
 
   // Loop through the tasks and add them to the list
   tasks.forEach(task => {
-    const list = document.querySelector("ul");
+    const list = document.getElementById("task-ul");
     const li = document.createElement("li");
-    li.innerHTML = `<input type="checkbox" onclick="taskComplete(this)" class="check" ${task.completed ? 'checked' : ''}>
+    li.innerHTML = `<div><input type="checkbox" onclick="taskComplete(this)" class="check" ${task.completed ? 'checked' : ''}>
       <input type="text" value="${task.task}" class="task ${task.completed ? 'completed' : ''}" onfocus="getCurrentTask(this)" onblur="editTask(this)">
-      <i class="fa fa-trash" onclick="removeTask(this)"></i>`;
+      <i class="fa fa-trash" onclick="removeTask(this)"></i></div>`;
     list.insertBefore(li, list.children[0]);
   });
 }
 
 function addTask() {
   const task = document.querySelector("form input");
-  const list = document.querySelector("ul");
+  const list = document.getElementById("task-ul");
   // return if task is empty
   if (task.value === "") {
     alert("Doing nothing? Time to relax then ;)");
@@ -45,9 +44,9 @@ function addTask() {
 
   // create list item, add innerHTML and append to ul
   const li = document.createElement("li");
-  li.innerHTML = `<input type="checkbox" onclick="taskComplete(this)" class="check">
+  li.innerHTML = `<div><input type="checkbox" onclick="taskComplete(this)" class="check">
   <input type="text" value="${task.value}" class="task" onfocus="getCurrentTask(this)" onblur="editTask(this)">
-  <i class="fa fa-trash" onclick="removeTask(this)"></i>`;
+  <i class="fa fa-trash" onclick="removeTask(this)"></i></div>`;
   list.insertBefore(li, list.children[0]);
   // clear input
   task.value = "";
