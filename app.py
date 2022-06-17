@@ -28,5 +28,10 @@ def login():
 def home():
     return render_template("index.html")
 
+@app.route('/myaccount')
+def myaccount():
+    return render_template("myaccount.html")
+
+
 if __name__ == "__main__":
     app.run()
