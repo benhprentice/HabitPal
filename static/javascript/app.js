@@ -1,3 +1,4 @@
+//Need to fix saved tasks formating. List elemetes are not deleting after deleting tasks. Js and local storage fixed already
 // On app load, get all tasks from localStorage
 window.onload = loadTasks;
 
