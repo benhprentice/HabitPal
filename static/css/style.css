@@ -47,14 +47,16 @@
 }
 
 .app {
-    width: 50%;
-    
+    width: 100%;
+    margin: auto;
+    border: 15px;
     
   }
 
   @media (max-width:768px) {
     .app {
       width: 90%;
+      margin: auto;
     }
   }
 
