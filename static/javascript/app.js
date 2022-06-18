@@ -72,10 +72,14 @@ function removeTask(event) {
   tasks.forEach(task => {
     if (task.task === event.parentNode.children[1].value) {
       // delete task
-      list.removeChild(list.lastElementChild);
+      tasks.splice(tasks.indexOf(task), 1);
+      var num = tasks.indexOf(task);
+      list.removeChild(list.children[num]);
+      
     }
   });
   
+  //list.removeChild(list.children[0]);
   localStorage.setItem("tasks", JSON.stringify(tasks));
   
   event.parentElement.remove();
