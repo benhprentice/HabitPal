@@ -1,0 +1,9 @@
+Utilized a 5 part youtube tutorial to learn the basics of how flask is used to connect our html, css, js and python code to create an enviroment for our website.
+https://www.youtube.com/watch?v=D8wpuAuADX4&list=PLrC-HcVNfULaP6y6z57MaF2L9fZz0RQJq&index=3
+
+Additionally, spent time creating a test website locally to demonstrate the below mentioned learned skills.
+
+Specically learned how to use:
+- GET and POST methods to get data from users and store this aquired data
+- How to trasform this data and display the stored data
+- How to store data and maintain the data even after app restarts using PostgreSQL and SQlite
