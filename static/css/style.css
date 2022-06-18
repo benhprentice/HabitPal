@@ -105,6 +105,7 @@
     padding: 10px;
     background-color: black;
     border-bottom: 1px solid gray;
+    text-align: left;
   }
 
   .check {
