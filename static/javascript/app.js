@@ -72,7 +72,6 @@ function removeTask(event) {
   tasks.forEach(task => {
     if (task.task === event.parentNode.children[1].value) {
       // delete task
-      tasks.splice(tasks.indexOf(task), 1);
       list.removeChild(list.lastElementChild);
     }
   });
