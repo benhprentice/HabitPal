@@ -136,7 +136,9 @@
   }
 
   .app ul li i {
-    float: right;
+    position: absolute;
+    right: 30px;
+    
     cursor: pointer;
   }
 
@@ -147,4 +149,9 @@
   .completed {
     color: rgba(192, 192, 192, 0.8);
     text-decoration: line-through;
+  }
+
+  /* change with secondary color when decided */
+  ul li:nth-child(odd) {
+    background: black;
   }

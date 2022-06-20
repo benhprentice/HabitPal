@@ -68,13 +68,13 @@ function taskComplete(event) {
 
 function removeTask(event) {
   let tasks = Array.from(JSON.parse(localStorage.getItem("tasks")));
-  const list = document.getElementById("task-ul");
+  //const li = document.getElementById("li");
+  window.location.reload();
   tasks.forEach(task => {
     if (task.task === event.parentNode.children[1].value) {
       // delete task
       tasks.splice(tasks.indexOf(task), 1);
       var num = tasks.indexOf(task);
-      list.removeChild(list.children[num]);
       
     }
   });
@@ -83,6 +83,7 @@ function removeTask(event) {
   localStorage.setItem("tasks", JSON.stringify(tasks));
   
   event.parentElement.remove();
+  //event.parentElement.parentNode.removeChild(event.parentNode);
   
 }
 
