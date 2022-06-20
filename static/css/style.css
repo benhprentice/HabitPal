@@ -47,14 +47,16 @@
 }
 
 .app {
-    width: 50%;
-    
+    width: 100%;
+    margin: auto;
+    border: 15px;
     
   }
 
   @media (max-width:768px) {
     .app {
       width: 90%;
+      margin: auto;
     }
   }
 
@@ -103,6 +105,7 @@
     padding: 10px;
     background-color: black;
     border-bottom: 1px solid gray;
+    text-align: left;
   }
 
   .check {
@@ -133,7 +136,9 @@
   }
 
   .app ul li i {
-    float: right;
+    position: absolute;
+    right: 45px;
+    
     cursor: pointer;
   }
 
@@ -144,4 +149,9 @@
   .completed {
     color: rgba(192, 192, 192, 0.8);
     text-decoration: line-through;
+  }
+
+  /* change with secondary color when decided */
+  ul li:nth-child(odd) {
+    background: black;
   }

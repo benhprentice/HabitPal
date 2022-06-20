@@ -31,10 +31,10 @@ function addTask() {
   const list = document.getElementById("task-ul");
   // return if task is empty
   if (task.value === "") {
-    alert("Doing nothing? Time to relax then ;)");
+    alert("Please enter a task!");
     return false;
   }
-  // check is task already exist
+  // check repeat task
   if (document.querySelector(`input[value="${task.value}"]`)) {
     alert("We don't need to do that twice");
     return false;
@@ -44,6 +44,7 @@ function addTask() {
   localStorage.setItem("tasks", JSON.stringify([...JSON.parse(localStorage.getItem("tasks") || "[]"), { task: task.value, completed: false }]));
 
   // create list item, add innerHTML and append to ul
+  
   const li = document.createElement("li");
   li.innerHTML = `<div><input type="checkbox" onclick="taskComplete(this)" class="check">
   <input type="text" value="${task.value}" class="task" onfocus="getCurrentTask(this)" onblur="editTask(this)">
@@ -51,6 +52,7 @@ function addTask() {
   list.insertBefore(li, list.children[0]);
   // clear input
   task.value = "";
+
 }
 
 function taskComplete(event) {
@@ -66,14 +68,23 @@ function taskComplete(event) {
 
 function removeTask(event) {
   let tasks = Array.from(JSON.parse(localStorage.getItem("tasks")));
+  //const li = document.getElementById("li");
+  window.location.reload();
   tasks.forEach(task => {
     if (task.task === event.parentNode.children[1].value) {
       // delete task
       tasks.splice(tasks.indexOf(task), 1);
+      var num = tasks.indexOf(task);
+      
     }
   });
+  
+  //list.removeChild(list.children[0]);
   localStorage.setItem("tasks", JSON.stringify(tasks));
+  
   event.parentElement.remove();
+  //event.parentElement.parentNode.removeChild(event.parentNode);
+  
 }
 
 // store current task to track changes
