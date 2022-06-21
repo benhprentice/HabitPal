@@ -1,7 +1,7 @@
 import os.path
 import sqlite3
 
-from flask import Flask, render_template, session
+from flask import Flask, redirect, render_template, request, session, url_for
 from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
@@ -20,9 +20,34 @@ cursor_setup.close()
 def welcome():
     return render_template("welcome.html")
 
-@app.route('/login')
+@app.route('/login', methods=['GET', 'POST'])
 def login():
+
+    if request.method == 'POST' and 'username' in request.form and 'password' in request.form:
+        session.permanent = True
+
+        username = request.form['username']
+        password = request.form['password']
+
+        cursor = conn.cursor()
+        cursor.execute('SELECT * FROM users WHERE username = ?', (username,))
+
+        user = cursor.fetchone()
+        print(user)
+
+        if user and check_password_hash(user[2], password):
+            session['loggedin'] = True
+            session['username'] = user[0]
+
+            return redirect(url_for('index.html'))
+        else:
+            msg = 'Incorrect username/password'
+    
     return render_template("login.html")
+
+@app.route('/register')
+def register():
+    return render_template("register.html")
 
 @app.route('/home')
 def home():
@@ -31,7 +56,6 @@ def home():
 @app.route('/myaccount')
 def myaccount():
     return render_template("myaccount.html")
-
 
 if __name__ == "__main__":
     app.run()
