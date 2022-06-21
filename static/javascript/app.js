@@ -121,3 +121,4 @@ function editTask(event) {
   // update local storage
   localStorage.setItem("tasks", JSON.stringify(tasks));
 }
+
