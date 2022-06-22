@@ -105,6 +105,7 @@ Project is: _in progress_
 
 ### Sprint 1:
 
+<<<<<<< HEAD
 Lu Bai
 
 1. Did reaserch for making websites.
@@ -112,6 +113,21 @@ Lu Bai
 3. Fixed css, error for saving task and task bar position, ect.
 4. Made icon for the website
 5. Made avatars for the project
+=======
+#### Lu Bai
+
+- Did reaserch for making websites. (Branch URL: https://bitbucket.org/cs3398-su22-betazoids/cs3398_su22_betazoid_project/branch/feature/CSBP-10-research-html-css-and-javascript-l_b404)
+
+- Setting up environment using Anaconda. Testing and debugging our project. (Branch URL: https://bitbucket.org/cs3398-su22-betazoids/cs3398_su22_betazoid_project/branch/feature/CSBP-20-project-testing-l_b404)
+
+- Fixed css reference (Commit URL: https://bitbucket.org/cs3398-su22-betazoids/cs3398_su22_betazoid_project/commits/8ecf1c303df8ceb4469fb61d4b6742c18391816e)
+
+- Rearrange task list(Commit URL: https://bitbucket.org/cs3398-su22-betazoids/cs3398_su22_betazoid_project/commits/0930e9409c1f05056d4b85cb776abe773b70993a), ect.
+
+- Made icon for the website (Branch URL: https://bitbucket.org/cs3398-su22-betazoids/cs3398_su22_betazoid_project/branch/feature/CSBP-19-create-icon-image-for-app)
+
+- Made avatars for the project (Branch URL: https://bitbucket.org/cs3398-su22-betazoids/cs3398_su22_betazoid_project/branch/feature/CSBP-28-help-creating-finding-avatars-l_b404)
+>>>>>>> ReadMe-file-updated-with-jwa64-tasks
 
 
 Jonathan Andrews
