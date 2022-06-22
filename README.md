@@ -84,6 +84,14 @@ What are the project requirements/dependencies? Where are they listed? A require
 
 Proceed to describe how to install / setup one's local environment / get started with the project.
 
+1. Set up an environment for the website using Anaconda. Instal python 3.9 and flask.
+2. Run Anaconda.
+3. Command: activate.bat
+4. Command: activate <environment_name>
+5. Command: cd <project_local_address>
+6. Command: flask run
+7. ctrl + c to quit.
+
 
 ## Usage
 How does one go about using it?
