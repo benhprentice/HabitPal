@@ -103,12 +103,26 @@ Provide various use cases and code examples here.
 ## Project Status
 Project is: _in progress_
 
+### Sprint 1:
+
 Lu Bai
 1. Did reaserch for making websites.
 2. Setting up environment using Anaconda. Testing and debugging our project.
 3. Fixed css, error for saving task and task bar position, ect.
 4. Made icon for the website
 5. Made avatars for the project
+
+#### Jonathan Andrews
+
+- Created HTML, CSS, JS, and background image for login/sigup webpage. https://cs3398su22betazoids.atlassian.net/browse/CSBP-15
+
+- Created several pet avatar pixel art images. https://cs3398su22betazoids.atlassian.net/browse/CSBP-21
+
+- Research done on implementation of Flask and Python. https://cs3398su22betazoids.atlassian.net/browse/CSBP-13
+
+- Testing and Debugging done on finished taks. https://cs3398su22betazoids.atlassian.net/browse/CSBP-22
+
+- Next tasks include final touches on pet avatars, store page development, visual updates for events and a mascot for our project.
 
 ## Room for Improvement
 Include areas you believe need improvement / could be improved. Also add TODOs for future development.
