@@ -103,6 +103,12 @@ Provide various use cases and code examples here.
 ## Project Status
 Project is: _in progress_
 
+Lu Bai
+1. Did reaserch for making websites.
+2. Setting up environment using Anaconda. Testing and debugging our project.
+3. Fixed css, error for saving task and task bar position, ect.
+4. Made icon for the website
+5. Made avatars for the project
 
 ## Room for Improvement
 Include areas you believe need improvement / could be improved. Also add TODOs for future development.
