@@ -106,23 +106,35 @@ Project is: _in progress_
 ### Sprint 1:
 
 Lu Bai
+
 1. Did reaserch for making websites.
 2. Setting up environment using Anaconda. Testing and debugging our project.
 3. Fixed css, error for saving task and task bar position, ect.
 4. Made icon for the website
 5. Made avatars for the project
 
-#### Jonathan Andrews
+
+Jonathan Andrews
 
 - Created HTML, CSS, JS, and background image for login/sigup webpage. https://cs3398su22betazoids.atlassian.net/browse/CSBP-15
-
 - Created several pet avatar pixel art images. https://cs3398su22betazoids.atlassian.net/browse/CSBP-21
-
 - Research done on implementation of Flask and Python. https://cs3398su22betazoids.atlassian.net/browse/CSBP-13
-
 - Testing and Debugging done on finished taks. https://cs3398su22betazoids.atlassian.net/browse/CSBP-22
-
 - Next tasks include final touches on pet avatars, store page development, visual updates for events and a mascot for our project.
+
+
+Ben Prentice
+
+- Created Python/Flask server https://cs3398su22betazoids.atlassian.net/browse/CSBP-11
+- Researched MySQL https://cs3398su22betazoids.atlassian.net/browse/CSBP-14
+- Create Database for user login information https://cs3398su22betazoids.atlassian.net/browse/CSBP-16
+- Created error page https://cs3398su22betazoids.atlassian.net/browse/CSBP-17
+- Fixed bugs https://cs3398su22betazoids.atlassian.net/browse/CSBP-42
+             https://cs3398su22betazoids.atlassian.net/browse/CSBP-43
+             https://cs3398su22betazoids.atlassian.net/browse/CSBP-44
+             https://cs3398su22betazoids.atlassian.net/browse/CSBP-45
+- Next Steps: complete login/registration, create database table for avatar states, redirect pages, session setup, connect 404 page, help with avatar animation, connect database to "My Account" page
+
 
 ## Room for Improvement
 Include areas you believe need improvement / could be improved. Also add TODOs for future development.
