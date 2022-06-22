@@ -119,6 +119,7 @@ Project is: _in progress_
 
 - Made avatars for the project (Branch URL: https://bitbucket.org/cs3398-su22-betazoids/cs3398_su22_betazoid_project/branch/feature/CSBP-28-help-creating-finding-avatars-l_b404)
 
+
 #### Jonathan Andrews
 
 - Created HTML, CSS, JS, and background image for login/sigup webpage. https://cs3398su22betazoids.atlassian.net/browse/CSBP-15
