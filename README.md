@@ -105,7 +105,7 @@ Project is: _in progress_
 
 ### Sprint 1:
 
-#### Lu Bai
+Lu Bai
 
 - Did reaserch for making websites. (Branch URL: https://bitbucket.org/cs3398-su22-betazoids/cs3398_su22_betazoid_project/branch/feature/CSBP-10-research-html-css-and-javascript-l_b404)
 
