@@ -105,15 +105,6 @@ Project is: _in progress_
 
 ### Sprint 1:
 
-<<<<<<< HEAD
-Lu Bai
-
-1. Did reaserch for making websites.
-2. Setting up environment using Anaconda. Testing and debugging our project.
-3. Fixed css, error for saving task and task bar position, ect.
-4. Made icon for the website
-5. Made avatars for the project
-=======
 #### Lu Bai
 
 - Did reaserch for making websites. (Branch URL: https://bitbucket.org/cs3398-su22-betazoids/cs3398_su22_betazoid_project/branch/feature/CSBP-10-research-html-css-and-javascript-l_b404)
@@ -127,7 +118,6 @@ Lu Bai
 - Made icon for the website (Branch URL: https://bitbucket.org/cs3398-su22-betazoids/cs3398_su22_betazoid_project/branch/feature/CSBP-19-create-icon-image-for-app)
 
 - Made avatars for the project (Branch URL: https://bitbucket.org/cs3398-su22-betazoids/cs3398_su22_betazoid_project/branch/feature/CSBP-28-help-creating-finding-avatars-l_b404)
->>>>>>> ReadMe-file-updated-with-jwa64-tasks
 
 
 Jonathan Andrews
