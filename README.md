@@ -159,7 +159,17 @@ Irving Donaldson
 
 - Next Steps: Implenting the color theme into the entirety of the web app, working with Sean to make the To Do List affect the Health Bar, replacing symbols (add button, trash button, etc) with new customized ones, and revising error message conditions.
 
+Sean Angle
 
+- Created the file system and organized pathways to the file. 
+
+- Created the "Home" html page. https://bitbucket.org/cs3398-su22-betazoids/cs3398_su22_betazoid_project/branch/feature/html-landing-page
+
+- Created the Nav Bar for all the pages and linked the pages to the buttons. https://bitbucket.org/cs3398-su22-betazoids/cs3398_su22_betazoid_project/branch/feature/CSBP-34-sla88-build-bootstrap-page
+
+- Created the my account landing page. https://bitbucket.org/cs3398-su22-betazoids/cs3398_su22_betazoid_project/branch/feature/CSBP-39-create-my-account-landing-page
+
+- Next Steps: Work with Irving to implement the health bar and how completing tasks effects the health bar of your pet. I will also create a stats area on the my account page that talks to the back end about how many tasks were completed. 
 ## Room for Improvement
 Include areas you believe need improvement / could be improved. Also add TODOs for future development. 
 
