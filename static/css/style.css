@@ -151,6 +151,23 @@
     text-decoration: line-through;
   }
 
+  .MA-pet-info {
+    width: 30rem;
+    height: 100%;
+  }
+
+  .MA-card{ 
+    margin-top: 10px;
+    margin-left: 20px;
+    width: 28rem;
+    align-self: auto;
+    
+  }
+
+  .card-text{
+    text-align: center;
+  }
+
   /* change with secondary color when decided */
   /* ul li:nth-child(odd) {
     background: black;
