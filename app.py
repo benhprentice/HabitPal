@@ -1,10 +1,16 @@
 import os.path
+import re
 import sqlite3
 
+from datetime import timedelta
 from flask import Flask, redirect, render_template, request, session, url_for
 from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
+
+app.secret_key = 'Flask%Crud#Application'
+
+app.permanent_session_lifetime = timedelta(minutes=10)
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 db_path = os.path.join(BASE_DIR, "db.sqlite")
@@ -22,32 +28,58 @@ def welcome():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    message = ''
 
-    if request.method == 'POST' and 'username' in request.form and 'password' in request.form:
+    if request.method == 'POST' and 'userz' in request.form and 'passwordz' in request.form:
         session.permanent = True
 
-        username = request.form['username']
-        password = request.form['password']
+        username = request.form['userz']
+        password = request.form['passwordz']
 
         cursor = conn.cursor()
         cursor.execute('SELECT * FROM users WHERE username = ?', (username,))
 
         user = cursor.fetchone()
-        print(user)
 
         if user and check_password_hash(user[2], password):
             session['loggedin'] = True
             session['username'] = user[0]
 
-            return redirect(url_for('index.html'))
+            return redirect(url_for('home'))
         else:
-            msg = 'Incorrect username/password'
-    
-    return render_template("login.html")
+            message = 'Incorrect username/password'
 
-@app.route('/register')
-def register():
-    return render_template("register.html")
+    if request.method == 'POST' and 'username' in request.form and 'email' in request.form and 'password' in request.form:
+
+        username = request.form['username']
+        email = request.form['email']
+        password = request.form['password']
+        hash = generate_password_hash(password)
+
+        cursor = conn.cursor()
+
+        cursor.execute('SELECT * FROM users WHERE username = ?', (username,))  
+        user = cursor.fetchone()
+
+        if user:
+            message = 'Username/user already exists!'
+        elif not re.match(r'[A-Za-z0-9]+', username):
+            message = 'Username must contain only characters and numbers!'
+        elif not re.match(r'[^@]+@[^@]+\.[^@]+', email):
+            message = 'Invalid email address!'
+        elif not username or not password or not email:
+            message = 'Please fill out the form!'
+        else:
+            cursor.execute('INSERT INTO users (username, email, password) VALUES (?, ?, ?)',
+                           (username, email, hash,))
+            conn.commit()
+            message = 'You have successfully registered!'
+            return render_template('login.html')
+
+    elif request.method == "POST":
+        msg = 'Please fill all required fields!'
+    
+    return render_template("login.html", message=message)
 
 @app.route('/home')
 def home():
