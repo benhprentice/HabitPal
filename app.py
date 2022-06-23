@@ -91,8 +91,15 @@ def home():
 
 @app.route('/myaccount')
 def myaccount():
-  
     return render_template("myaccount.html")
+
+@app.route('/logout')
+def logout():
+    session.pop('loggedin', None)
+    session.pop('username', None)
+
+    return redirect(url_for('welcome'))
+
 
 if __name__ == "__main__":
     app.run()
