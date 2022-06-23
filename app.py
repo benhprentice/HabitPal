@@ -83,10 +83,15 @@ def login():
 
 @app.route('/home')
 def home():
-    return render_template("index.html")
+    if 'loggedin' in session:
+
+        return render_template('index.html', username=session['username'])
+        
+    return render_template("login.html")
 
 @app.route('/myaccount')
 def myaccount():
+  
     return render_template("myaccount.html")
 
 if __name__ == "__main__":
