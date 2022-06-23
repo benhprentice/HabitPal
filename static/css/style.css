@@ -47,128 +47,139 @@
 }
 
 .app {
-    width: 100%;
-    margin: auto;
-    border: 15px;
-    
-  }
+  width: 100%;
+  margin: auto;
+  border: 15px;
+  
+}
 
-  @media (max-width:768px) {
-    .app {
-      width: 90%;
-      margin: auto;
-    }
-  }
-
-  .app h1 {
-    color: white;
-    font-size: 40px;
-    padding: 10px 0;
-    text-align: center;
-    border-radius: .5rem .5rem 0 0;
-    background-color: black;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-  }
-
-  .app form {
-    display: flex;
-    width: 100%;
-    background-color: black;
-  }
-
-  .app form input {
-    border: none;
-    background-color: black;
-    font-size: 18px;
-    color: white;
-    padding: 10px;
+@media (max-width:768px) {
+  .app {
     width: 90%;
+    margin: auto;
   }
+}
 
-  .app form button {
-    border: none;
-    color: white;
-    background-color: black;
-    font-size: 25px;
-    font-weight: 600;
-    height: 42px;
-    width: 10%;
-  }
+.app h1 {
+  color: white;
+  font-size: 40px;
+  padding: 10px 0;
+  text-align: center;
+  border-radius: .5rem .5rem 0 0;
+  background-color: black;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 
-  .app ul {
-    list-style: none;
-    color: #e0e0e0;
-    padding: 0;
-  }
+.app form {
+  display: flex;
+  width: 100%;
+  background-color: black;
+}
 
-  .app ul li {
-    padding: 10px;
-    background-color: black;
-    border-bottom: 1px solid gray;
-    text-align: left;
-  }
+.app form input {
+  border: none;
+  background-color: black;
+  font-size: 18px;
+  color: white;
+  padding: 10px;
+  width: 90%;
+}
 
-  .check {
-    width: 0.8em;
-    height: 0.8em;
-    cursor: pointer;
-    border-radius: 50%;
-    background-color: white;
-    border: 1px solid rgb(255, 255, 255);
-    -webkit-appearance: none;
-  }
+.app form button {
+  border: none;
+  color: white;
+  background-color: black;
+  font-size: 25px;
+  font-weight: 600;
+  height: 42px;
+  width: 10%;
+}
 
-  .check:checked {
-    background-color: gray;
-  }
+.app ul {
+  list-style: none;
+  color: #e0e0e0;
+  padding: 0;
+}
 
-  .task {
-    font-size: 18px;
-    padding: 0 10px;
-    width: fit-content;
-    background: transparent;
-    border: none;
-    color: #fff;
-  }
+.app ul li {
+  padding: 10px;
+  background-color: black;
+  border-bottom: 1px solid gray;
+  text-align: left;
+}
 
-  .task:focus {
-    outline: none;
-  }
+.check {
+  width: 0.8em;
+  height: 0.8em;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: white;
+  border: 1px solid rgb(255, 255, 255);
+  -webkit-appearance: none;
+}
 
-  .app ul li i {
-    position: absolute;
-    right: 45px;
-    
-    cursor: pointer;
-  }
+.check:checked {
+  background-color: gray;
+}
 
-  .app ul li i:hover {
-    color: rgb(255, 82, 82);
-  }
+.task {
+  font-size: 18px;
+  padding: 0 10px;
+  width: fit-content;
+  background: transparent;
+  border: none;
+  color: #fff;
+}
 
-  .completed {
-    color: rgba(192, 192, 192, 0.8);
-    text-decoration: line-through;
-  }
+.task:focus {
+  outline: none;
+}
 
-  .MA-pet-info {
-    width: 30rem;
-    height: 100%;
-  }
+.app ul li i {
+  position: absolute;
+  right: 45px;
+  
+  cursor: pointer;
+}
 
-  .MA-card{ 
-    margin-top: 10px;
-    margin-left: 20px;
-    width: 28rem;
-    align-self: auto;
-    
-  }
+.app ul li i:hover {
+  color: rgb(255, 82, 82);
+}
 
-  .card-text{
-    text-align: center;
-  }
+.completed {
+  color: rgba(192, 192, 192, 0.8);
+  text-decoration: line-through;
+}
 
-  /* change with secondary color when decided */
-  /* ul li:nth-child(odd) {
-    background: black;
-  } */
+.MA-pet-info {
+  width: 30rem;
+  height: 100%;
+  float: left;
+}
+
+.MA-card{ 
+  margin-top: 10px;
+  margin-left: 20px;
+  width: 28rem;
+  float: left;
+
+  
+}
+
+.card-text{
+  text-align: center;
+}
+
+.MA-jumbotron{
+  float: right;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+.MA-container{
+  
+}
+
+/* change with secondary color when decided */
+/* ul li:nth-child(odd) {
+  background: black;
+} */
