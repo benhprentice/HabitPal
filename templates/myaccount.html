@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="{{ url_for('welcome') }}">Habit Pal!</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -21,11 +21,12 @@
             <li class="nav-item active">
               <a class="nav-link" href="{{ url_for('home') }}">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item ma-nav-item">
               <a class="nav-link" href="{{ url_for('myaccount') }}">My Account</a>
             </li>
             
           </ul>
+          <button type="button" class="btn btn-dark">Sign Out</button>
           
         </div>
     </nav>
@@ -35,9 +36,6 @@
           <img class="card-img-top" src="{{url_for('static',filename = 'banner.jpg')}}" alt="Card image cap">
           <div class="card-body">
             <p class="card-text">*Place pet name here.*</p>
-          </div>
-          <div>
-            <button type="button" class="btn btn-primary btn-lg">Sign Out</button>
           </div>
         </div>
       </div>
