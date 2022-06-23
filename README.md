@@ -65,8 +65,8 @@ List the ready features here:
 	- We want our users to be able to save their game progress, also be able to rejoin. And allow users to creat their unique profile.
 	
 - Feature 2: Task Management System
-	- Task calendar.
-	- Allow users to input their daily task they need to finish like a calendar. Users will be able to mark their task finished or unfinished themselves.
+	- Task list.
+	- Allow users to input their daily task they need to finish like a planner. Users will be able to mark their task finished or unfinished themselves.
 	- We want to encourage our users to be productive by giving them in game currency if they finish a task.
 	
 - Feature 3: Avatar Selection 
@@ -143,17 +143,35 @@ Ben Prentice
 - Next Steps: complete login/registration, create database table for avatar states, redirect pages, session setup, connect 404 page, help with avatar animation, connect database to "My Account" page
 
 
+Irving Donaldson
+
+- Created HTML, CSS, and JS for To Do list on home page. https://bitbucket.org/cs3398-su22-betazoids/cs3398_su22_betazoid_project/branch/feature/CSBP-18-implement-to-do-list
+
+- Added details, formatting, and corrections to To Do list on home page. https://bitbucket.org/cs3398-su22-betazoids/cs3398_su22_betazoid_project/branch/feature/CSBP-41-to-do-list-formatting
+
+- Researched how to do a To Do list with local storage. https://bitbucket.org/cs3398-su22-betazoids/cs3398_su22_betazoid_project/branch/feature/researchToDo
+
+	*This branch may not have a merge, this was a mistake from the learning phase of these tools, but the work is shown and is in the master.
+
+- Researched how to add a counter to the tasks in the To Do list to affect the virtual pet. https://bitbucket.org/cs3398-su22-betazoids/cs3398_su22_betazoid_project/branch/feature/CSBP-37-research-counter-into-listener-f
+
+- Created document of various color palettes for the website that the team would vote on to determine the colors to be implemented in sprint 2. https://bitbucket.org/cs3398-su22-betazoids/cs3398_su22_betazoid_project/branch/feature/CSBP-35-find-color-palette-for-list
+
+- Next Steps: Implenting the color theme into the entirety of the web app, working with Sean to make the To Do List affect the Health Bar, replacing symbols (add button, trash button, etc) with new customized ones, and revising error message conditions.
+
+
 ## Room for Improvement
-Include areas you believe need improvement / could be improved. Also add TODOs for future development.
+Include areas you believe need improvement / could be improved. Also add TODOs for future development. 
 
 Room for improvement:
-- Improvement to be done 1
-- Improvement to be done 2
+- Presentation of interface
+- Combining elements
+- To Do List error triggers
 
 To do:
-- Feature to be added 1
-- Feature to be added 2
-
+- Implement Coherent color theme
+- Bring in pixel pets, integrate with To Do List
+- Fix error triggers and test rigorously 
 
 ## Acknowledgements
 
