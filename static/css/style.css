@@ -1,49 +1,68 @@
+/* Using "!important" to override bootstrap css*/
 
 .main-container{
-    width: 100%;
+  border-top: 10px solid #C49799;
+  width: 100%;
+  height: 100vh;
+  background-color:#A9927D;
+  
 }
 
 .jumbotron{
-    text-align: center;
+  text-align: center;
+  color: white;
+  background-color: #A9927D !important;
+
 }
+
+.welcome-photo{
+background-image: url("assets/images/habitpal_conceptart.PNG");
+background-repeat: no-repeat;
+background-position: center;
+background-size:cover;
+background-blend-mode: multiply;
+}
+
 .footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: grey;
-    color: white;
-    text-align: center;
-    opacity: 75%;
-   
+  border-top: 10px solid;
+  border-color: white;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: grey;
+  color: white;
+  text-align: center;
+  opacity: 75%;
+ 
 }
 
 /* Style all font awesome icons */
 .fa {
-    padding: 20px;
-    font-size: 30px;
-    width: 50px;
-    text-align: center;
-    text-decoration: none;
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
 }
-  
+
 /* Add a hover effect if you want */
 .fa:hover {
-    opacity: 0.7;
+  opacity: 0.7;
 }
-  
+
 /* Set a specific color for each brand */
-  
+
 /* Facebook */
 .fa-facebook {
-    background: #3B5998;
-    color: white;
+  background: #3B5998;
+  color: white;
 }
-  
+
 /* Twitter */
 .fa-twitter {
-    background: #55ACEE;
-    color: white;
+  background: #55ACEE;
+  color: white;
 }
 
 .app {
@@ -66,29 +85,30 @@
   padding: 10px 0;
   text-align: center;
   border-radius: .5rem .5rem 0 0;
-  background-color: black;
+  background-color: #4A7C59;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-top: 50px;
 }
 
 .app form {
   display: flex;
   width: 100%;
-  background-color: black;
+  background-color: #4A7C59
 }
 
 .app form input {
   border: none;
-  background-color: black;
+  background-color: white;
   font-size: 18px;
-  color: white;
+  color: #4A7C59;
   padding: 10px;
   width: 90%;
 }
 
 .app form button {
   border: none;
-  color: white;
-  background-color: black;
+  color: #4A7C59;
+  background-color: white;
   font-size: 25px;
   font-weight: 600;
   height: 42px;
@@ -103,8 +123,8 @@
 
 .app ul li {
   padding: 10px;
-  background-color: black;
-  border-bottom: 1px solid gray;
+  background-color: #8FC0A9;
+  border-bottom: 1px solid white;
   text-align: left;
 }
 
@@ -138,7 +158,7 @@
 .app ul li i {
   position: absolute;
   right: 45px;
-  
+  size: 15px;
   cursor: pointer;
 }
 
@@ -147,10 +167,15 @@
 }
 
 .completed {
-  color: rgba(192, 192, 192, 0.8);
+  color: black;
   text-decoration: line-through;
 }
 
+/* change with secondary color when decided */
+/*ul li:nth-child(odd) {
+  background: gray;
+} 
+*/
 .MA-pet-info {
   width: 30rem;
   height: 100%;
