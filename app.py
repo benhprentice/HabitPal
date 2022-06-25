@@ -1,8 +1,10 @@
+from email.utils import localtime
 import os.path
 import re
 import sqlite3
 
-from datetime import timedelta
+from datetime import timedelta, datetime
+import time
 from flask import Flask, redirect, render_template, request, session, url_for
 from werkzeug.security import generate_password_hash, check_password_hash
 
@@ -83,7 +85,12 @@ def login():
 
 @app.route('/home')
 def home():
+
+    datetime = datetime.now()
+    hour = datetime.hour
+
     if 'loggedin' in session:
+        
 
         return render_template('index.html', username=session['username'])
         
