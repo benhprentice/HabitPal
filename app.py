@@ -1,4 +1,3 @@
-from email.utils import localtime
 import os.path
 import re
 import sqlite3
