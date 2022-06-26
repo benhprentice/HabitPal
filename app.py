@@ -3,7 +3,7 @@ import re
 import sqlite3
 
 from datetime import timedelta, datetime
-from flask import Flask, redirect, render_template, request, session, url_for
+from flask import Flask, redirect, render_template, request, session, url_for, request
 from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
@@ -83,14 +83,27 @@ def login():
     
     return render_template("login.html", message=message)
 
-@app.route('/home')
+@app.route('/home', methods=['POST', 'GET'])
 def home():
 
     if 'loggedin' in session:
 
+        cursor = conn.cursor()
+
         dateandtime = datetime.now()
         rightNow = dateandtime.hour
         status = ( (24 - rightNow) / 24 ) * 100
+        day = dateandtime.day
+        day = str(day)
+
+        if request.method == 'POST' and 'taskz' in request.form:
+            print("what the fuk")
+            taskz = request.form['taskz']
+            print(taskz)
+            cursor.execute('INSERT INTO tasks ( username, date, task ) VALUES (?, ?, ?)', (session['username'], day, taskz,))
+            conn.commit()
+            return render_template("index.html", username=session['username'], status=status)
+
         return render_template("index.html", username=session['username'], status=status)
         
     return render_template("login.html")
