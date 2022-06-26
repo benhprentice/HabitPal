@@ -21,6 +21,8 @@ conn = sqlite3.connect(db_path, check_same_thread=False)
 cursor_setup = conn.cursor()
 cursor_setup.execute('CREATE TABLE IF NOT EXISTS users(username text, email text, password text)')
 conn.commit()
+cursor_setup.execute('CREATE TABLE IF NOT EXISTS tasks(username text, date text, task text)')
+conn.commit()
 cursor_setup.close()
 
 @app.route('/')
