@@ -28,7 +28,9 @@ function loadTasks() {
      class="task ${task.completed ? 'completed' : ''}" onfocus="getCurrentTask(this)" onblur="editTask(this)">
     <i class="fa fa-trash" onclick="removeTask(this)"></i></div>`;
     list.insertBefore(li, list.children[0]);
-    makeProgress();
+    if (task.completed){
+      makeProgress();
+    }
   });
 }
 

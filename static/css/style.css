@@ -87,7 +87,7 @@ background-blend-mode: multiply;
   border-radius: .5rem .5rem 0 0;
   background-color: #4A7C59;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  margin-top: 50px;
+  margin-top: 10px;
 }
 
 .app form {
@@ -205,6 +205,31 @@ background-blend-mode: multiply;
   width: 0%;
 }
 
+.button {
+  background-color: #C49799; 
+  border: 2px solide white;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 12px;
+  margin-top: 30px;
+}
+
+.button:hover {
+  color: #C49799; 
+  border: 2px solid #C49799;
+  background-color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 12px;
+  margin-top: 30px;
+}
 
 /* change with secondary color when decided */
 /* ul li:nth-child(odd) {
