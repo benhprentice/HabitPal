@@ -1,8 +1,9 @@
+from email.utils import localtime
 import os.path
 import re
 import sqlite3
 
-from datetime import timedelta
+from datetime import timedelta, datetime
 from flask import Flask, redirect, render_template, request, session, url_for
 from werkzeug.security import generate_password_hash, check_password_hash
 
@@ -83,15 +84,27 @@ def login():
 
 @app.route('/home')
 def home():
+
     if 'loggedin' in session:
 
-        return render_template('index.html', username=session['username'])
+        dateandtime = datetime.now()
+        rightNow = dateandtime.hour
+        status = ( (24 - rightNow) / 24 ) * 100
+
+        return render_template("index.html", username=session['username'])
         
     return render_template("login.html")
 
 @app.route('/myaccount')
 def myaccount():
-    return render_template("myaccount.html")
+    if 'loggedin' in session:
+        # image = url_for('static',filename ='Egg_presets.png')
+        eggs=[url_for('static',filename ='egg1.png'), url_for('static',filename ='egg2.png'), 
+        url_for('static',filename ='egg3.png')]
+
+        return render_template("myaccount.html", eggs=eggs)
+
+    return render_template("login.html")
 
 @app.route('/logout')
 def logout():

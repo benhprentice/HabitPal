@@ -1,61 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Account</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Account</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="{{ url_for('welcome') }}">Habit Pal!</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="{{ url_for('home') }}">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="{{ url_for('myaccount') }}">My Account</a>
-            </li>
-            
-          </ul>
-          <a href="{{ url_for('logout') }}" class="btn btn-dark">Sign Out</a>
-          
-        </div>
-    </nav>
-    <div class="MA-container">
-      <div class="MA-pet-info">
-        <div class="MA-card">
-          <img class="card-img-top" src="{{url_for('static',filename = 'banner.jpg')}}" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-text">*Place pet name here.*</p>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="{{ url_for('welcome') }}">Habit Pal!</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="{{ url_for('home') }}">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="{{ url_for('myaccount') }}">My Account</a>
+        </li>
+
+      </ul>
+      <a href="{{ url_for('logout') }}" class="btn btn-dark">Sign Out</a>
+
+    </div>
+  </nav>
+  <div class="MA-container">
+    <div class="row">
+      <div class="col-5">
+        <div class="MA-pet-info">
+          <div class="MA-card">
+            <br>
+            <img class="card-img-top" src="{{url_for('static',filename ='jwa_concept_MURGv5.PNG')}}"
+              alt="Card image cap">
+            <div class="card-body">
+              <p class="card-text">Grogglepuss</p>
+            </div>
           </div>
         </div>
       </div>
-      <div class="MA-jumbotron">
-        <h1 class="display-4">Tasks finishd could maybe keep count here.</h1>
-        <p class="lead">Maybe place a tasks bar here and have different levels or milestones</p>
-        <hr class="my-4">
-        <h1 class="display-4"> Other taskss here.</h1>
-        <p>place another progress bar here</p>
+      <div class="col-7">
+        <br>
+        <h3>My nest</h3>
+        {% for i in eggs %}
+        <img src="{{ i }}" style="width:25%">
+        {% endfor %}
+        <!-- <img class="card-img-top" src="{{ image }}" style="width:65%" alt="Card image cap"> -->
+        <div class="eggs"></div>
       </div>
     </div>
+  </div>
 
+  <!-- <div class="MA-jumbotron"> -->
+  <!-- <h1 class="display-4">Tasks finishd could maybe keep count here.</h1> -->
+  <!-- <p class="lead">Maybe place a tasks bar here and have different levels or milestones</p> -->
+  <!-- <hr class="my-4"> -->
+  <!-- <h1 class="display-4"> Other taskss here.</h1> -->
+  <!-- <p>place another progress bar here</p> -->
+  <!-- </div> -->
 
+  <div class="footer">
+    <p>Habit Pal!</p>
+    <a href="https://www.facebook.com/" target="_blank" class="fa fa-facebook"></a>
+    <a href="https://twitter.com/" target="_blank" class="fa fa-twitter"></a>
+  </div>
 
-    <div class="footer">
-      <p>Habit Pal!</p>
-      <a href="https://www.facebook.com/" target="_blank" class="fa fa-facebook"></a>
-      <a href="https://twitter.com/" target="_blank" class="fa fa-twitter"></a>
-    </div>
-
-    
 </body>
+
 </html>
