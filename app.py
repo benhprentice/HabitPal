@@ -1,4 +1,3 @@
-from email.utils import localtime
 import os.path
 import re
 import sqlite3
@@ -20,6 +19,8 @@ conn = sqlite3.connect(db_path, check_same_thread=False)
 
 cursor_setup = conn.cursor()
 cursor_setup.execute('CREATE TABLE IF NOT EXISTS users(username text, email text, password text)')
+conn.commit()
+cursor_setup.execute('CREATE TABLE IF NOT EXISTS tasks(username text, date text, task text)')
 conn.commit()
 cursor_setup.close()
 
@@ -90,8 +91,7 @@ def home():
         dateandtime = datetime.now()
         rightNow = dateandtime.hour
         status = ( (24 - rightNow) / 24 ) * 100
-
-        return render_template("index.html", username=session['username'])
+        return render_template("index.html", username=session['username'], status=status)
         
     return render_template("login.html")
 
@@ -100,7 +100,10 @@ def myaccount():
     if 'loggedin' in session:
         # image = url_for('static',filename ='Egg_presets.png')
         eggs=[url_for('static',filename ='egg1.png'), url_for('static',filename ='egg2.png'), 
-        url_for('static',filename ='egg3.png')]
+        url_for('static',filename ='egg3.png'), url_for('static',filename ='egg4.png'), 
+        url_for('static',filename ='egg5.png'), url_for('static',filename ='egg6.png'), 
+        url_for('static',filename ='egg7.png'), url_for('static',filename ='egg8.png'), 
+        url_for('static',filename ='egg9.png')]
 
         return render_template("myaccount.html", eggs=eggs)
 
