@@ -90,8 +90,6 @@ def home():
         dateandtime = datetime.now()
         rightNow = dateandtime.hour
         status = ( (24 - rightNow) / 24 ) * 100
-        status = str(status)
-        print(status)
 
         return render_template("index.html", username=session['username'])
         
@@ -100,9 +98,11 @@ def home():
 @app.route('/myaccount')
 def myaccount():
     if 'loggedin' in session:
-        image = url_for('static',filename ='Egg_presets.png')
+        # image = url_for('static',filename ='Egg_presets.png')
+        eggs=[url_for('static',filename ='egg1.png'), url_for('static',filename ='egg2.png'), 
+        url_for('static',filename ='egg3.png')]
 
-        return render_template("myaccount.html", image=image)
+        return render_template("myaccount.html", eggs=eggs)
 
     return render_template("login.html")
 
