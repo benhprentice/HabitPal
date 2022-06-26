@@ -90,8 +90,7 @@ def home():
         dateandtime = datetime.now()
         rightNow = dateandtime.hour
         status = ( (24 - rightNow) / 24 ) * 100
-
-        return render_template("index.html", username=session['username'])
+        return render_template("index.html", username=session['username'], status=status)
         
     return render_template("login.html")
 
@@ -100,7 +99,10 @@ def myaccount():
     if 'loggedin' in session:
         # image = url_for('static',filename ='Egg_presets.png')
         eggs=[url_for('static',filename ='egg1.png'), url_for('static',filename ='egg2.png'), 
-        url_for('static',filename ='egg3.png')]
+        url_for('static',filename ='egg3.png'), url_for('static',filename ='egg4.png'), 
+        url_for('static',filename ='egg5.png'), url_for('static',filename ='egg6.png'), 
+        url_for('static',filename ='egg7.png'), url_for('static',filename ='egg8.png'), 
+        url_for('static',filename ='egg9.png')]
 
         return render_template("myaccount.html", eggs=eggs)
 
