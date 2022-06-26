@@ -37,24 +37,7 @@
           <div class="app">
 
             <div class="progress">
-              <div class="progress-bar progress-bar-striped bg-info progress-bar-animated" role="progressbar" style="width: 0%"></div>
- 
-              <script>
-                var i = 0;
-                var healthBar = document.querySelector(".progress-bar");
-                function makeProgress(){
-                    if(i <= 90){
-                        i = i + 10;
-                        healthBar.style.width = i + "%";
-                        healthBar.innerText = i + "%";
-                    }
-                
-                    // Wait for sometime before running this script again
-                    setTimeout("makeProgress()", 100);
-                }
-                makeProgress();
-                </script>
-
+              <div id = "health" class="progress-bar progress-bar-striped bg-info progress-bar-animated" role="progressbar"></div>
             </div>
             
             <h1>To Do:</h1>

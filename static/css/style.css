@@ -201,6 +201,10 @@ background-blend-mode: multiply;
   margin-top: 10px;
 }
 
+.health{
+  width: 0%;
+}
+
 
 /* change with secondary color when decided */
 /* ul li:nth-child(odd) {
