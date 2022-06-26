@@ -97,7 +97,12 @@ def home():
 
 @app.route('/myaccount')
 def myaccount():
-    return render_template("myaccount.html")
+    if 'loggedin' in session:
+        image = url_for('static',filename ='Egg_presets.png')
+
+        return render_template("myaccount.html", image=image)
+
+    return render_template("login.html")
 
 @app.route('/logout')
 def logout():
