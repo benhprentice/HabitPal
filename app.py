@@ -89,9 +89,11 @@ def home():
 
         dateandtime = datetime.now()
         rightNow = dateandtime.hour
-        print(rightNow)
+        status = ( (24 - rightNow) / 24 ) * 100
+        status = str(status)
+        print(status)
 
-        return render_template('index.html', username=session['username'])
+        return render_template("index.html", username=session['username'])
         
     return render_template("login.html")
 
