@@ -55,6 +55,7 @@ function addTask() {
 
 }
 
+
 function taskComplete(event) {
   let tasks = Array.from(JSON.parse(localStorage.getItem("tasks")));
   tasks.forEach(task => {
@@ -64,7 +65,11 @@ function taskComplete(event) {
   });
   localStorage.setItem("tasks", JSON.stringify(tasks));
   event.nextElementSibling.classList.toggle("completed");
+  
+  let health = document.querySelector(".progress-bar");
+  health.width += 10;
 }
+
 
 function removeTask(event) {
   let tasks = Array.from(JSON.parse(localStorage.getItem("tasks")));
