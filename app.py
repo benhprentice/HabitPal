@@ -5,6 +5,12 @@ import sqlite3
 from datetime import timedelta, datetime
 from flask import Flask, redirect, render_template, request, session, url_for, request
 from werkzeug.security import generate_password_hash, check_password_hash
+from flask_wtf import FlaskForm
+from wtforms import StringField
+from wtforms.validators import DataRequired
+
+class MyForm(FlaskForm):
+    name = StringField('name', validators=[DataRequired()])
 
 app = Flask(__name__)
 
@@ -103,6 +109,14 @@ def home():
         if request.method == 'POST' and 'taskz' in request.form:
             taskz = request.form['taskz']
             cursor.execute('INSERT INTO tasks ( username, date, task ) VALUES (?, ?, ?)', (session['username'], day, taskz,))
+            conn.commit()
+            cursor.execute( 'SELECT task FROM tasks WHERE username = ? and date = ?', (session['username'], day,))  
+            tasks = cursor.fetchall()
+            return render_template("index.html", username=session['username'], status=status, tasks=tasks)
+
+        if request.method == 'POST' and 'trash' in request.form:
+            trash = request.form['trash']
+            cursor.execute('DELETE FROM tasks ( username, date, task ) VALUES (?, ?, ?)', (session['username'], day, taskz,))
             conn.commit()
             cursor.execute( 'SELECT task FROM tasks WHERE username = ? and date = ?', (session['username'], day,))  
             tasks = cursor.fetchall()

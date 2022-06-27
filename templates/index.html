@@ -59,15 +59,15 @@
           <button type="submit">&plus;</button>
         </form>
         <ul id="task-ul">
-          {% for i in tasks %}
-          <li>
-            <div>
-              <input type="checkbox" class="check">
-              <input type="text" id="task-ul" value="{{ i[0] }}" class="task">
-              <i class="fa fa-trash"></i>
-            </div>
-          </li>
-          {% endfor %}
+            {% for i in tasks %}
+            <li>
+              <div>
+                <input type="checkbox" class="check">
+                <input type="text" id="task-ul" value="{{ i[0] }}" class="task">
+                <i class="fa fa-trash"></i>
+              </div>
+            </li>
+            {% endfor %}
         </ul>
         <!-- 
         <ul id="task-ul"></ul> -->
