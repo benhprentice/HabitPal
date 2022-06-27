@@ -94,17 +94,21 @@ def home():
         rightNow = dateandtime.hour
         status = ( (24 - rightNow) / 24 ) * 100
         day = dateandtime.day
-        day = str(day)
+        month = dateandtime.month
+        year = dateandtime.year
+        day = str(month) + "-" + str(day) + "-" + str(year)
+        cursor.execute( 'SELECT task FROM tasks WHERE username = ? and date = ?', (session['username'], day,))  
+        tasks = cursor.fetchall()
 
         if request.method == 'POST' and 'taskz' in request.form:
-            print("what the fuk")
             taskz = request.form['taskz']
-            print(taskz)
             cursor.execute('INSERT INTO tasks ( username, date, task ) VALUES (?, ?, ?)', (session['username'], day, taskz,))
             conn.commit()
-            return render_template("index.html", username=session['username'], status=status)
+            cursor.execute( 'SELECT task FROM tasks WHERE username = ? and date = ?', (session['username'], day,))  
+            tasks = cursor.fetchall()
+            return render_template("index.html", username=session['username'], status=status, tasks=tasks)
 
-        return render_template("index.html", username=session['username'], status=status)
+        return render_template("index.html", username=session['username'], status=status, tasks=tasks)
         
     return render_template("login.html")
 
