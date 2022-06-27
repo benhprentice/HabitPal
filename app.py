@@ -147,6 +147,16 @@ def logout():
 
     return redirect(url_for('welcome'))
 
+@app.route('/reset')
+def reset():
+    if session['username'] == "benprentice":
+        cursor = conn.cursor()
+        cursor.execute ('DROP TABLE IF EXISTS tasks')
+        conn.commit()
+        cursor.execute('CREATE TABLE tasks(username text, date text, task text)')
+        conn.commit()
+    return render_template("404.html")
+
 @app.errorhandler(404)
   
 def not_found(e):
