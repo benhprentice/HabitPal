@@ -3,7 +3,7 @@ import re
 import sqlite3
 
 from datetime import timedelta, datetime
-from flask import Flask, redirect, render_template, request, session, url_for, request
+from flask import Flask, jsonify, make_response, redirect, render_template, request, session, url_for, request
 from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
@@ -100,6 +100,8 @@ def home():
         cursor.execute( 'SELECT task FROM tasks WHERE username = ? and date = ?', (session['username'], day,))  
         tasks = cursor.fetchall()
 
+
+
         if request.method == 'POST' and 'taskz' in request.form:
             taskz = request.form['taskz']
             cursor.execute('INSERT INTO tasks ( username, date, task ) VALUES (?, ?, ?)', (session['username'], day, taskz,))
@@ -151,10 +153,24 @@ def reset():
         conn.commit()
     return render_template("404.html")
 
-@app.errorhandler(404)
-  
+@app.errorhandler(404)  
 def not_found(e):
     return render_template("404.html")
+
+@app.route('/ajax', methods = ['POST'])
+def ajax():
+    if request.method == "POST":
+        jsonData = request.get_json()
+        print(jsonData)
+        return {
+            'response' : 'I am the response'
+        }
+    return render_template('index.html')
+#    req = request.get_json()
+#    print(req)
+#    print("yoooo")
+#    res = make_response(jsonify({"message": "JSON received"}), 200)
+#    return res
 
 if __name__ == "__main__":
     app.run()

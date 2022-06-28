@@ -40,19 +40,53 @@ function addTask() {
     return false;
   }
 
-  // add task to local storage
-  localStorage.setItem("tasks", JSON.stringify([...JSON.parse(localStorage.getItem("tasks") || "[]"), { task: task.value, completed: false }]));
 
-  // create list item, add innerHTML and append to ul
+
+
   
-  const li = document.createElement("li");
-  li.innerHTML = `<div><input type="checkbox" onclick="taskComplete(this)" class="check">
+
+  fetch('/ajax', {
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    method: 'POST',
+    body: JSON.stringify({
+      'name': 'Rahul Kumar',
+      'country': 'India'
+    })
+  })
+    .then(function (response) {
+
+      if (response.ok) {
+        response.json()
+          .then(function (response) {
+            console.log(response);
+          });
+      }
+      else {
+        throw Error('Something went wrong');
+      }
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+
+
+
+
+
+
+// add task to local storage
+localStorage.setItem("tasks", JSON.stringify([...JSON.parse(localStorage.getItem("tasks") || "[]"), { task: task.value, completed: false }]));
+
+// create list item, add innerHTML and append to ul
+const li = document.createElement("li");
+li.innerHTML = `<div><input type="checkbox" onclick="taskComplete(this)" class="check">
   <input type="text" value="${task.value}" class="task" onfocus="getCurrentTask(this)" onblur="editTask(this)">
   <i class="fa fa-trash" onclick="removeTask(this)"></i></div>`;
-  list.insertBefore(li, list.children[0]);
-  // clear input
-  task.value = "";
-
+list.insertBefore(li, list.children[0]);
+// clear input
+task.value = "";
 }
 
 function taskComplete(event) {
@@ -75,16 +109,16 @@ function removeTask(event) {
       // delete task
       tasks.splice(tasks.indexOf(task), 1);
       var num = tasks.indexOf(task);
-      
+
     }
   });
-  
+
   //list.removeChild(list.children[0]);
   localStorage.setItem("tasks", JSON.stringify(tasks));
-  
+
   event.parentElement.remove();
   //event.parentElement.parentNode.removeChild(event.parentNode);
-  
+
 }
 
 // store current task to track changes
