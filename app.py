@@ -3,7 +3,7 @@ import re
 import sqlite3
 
 from datetime import timedelta, datetime
-from flask import Flask, redirect, render_template, request, session, url_for
+from flask import Flask, jsonify, make_response, redirect, render_template, request, session, url_for, request
 from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
@@ -21,6 +21,8 @@ cursor_setup = conn.cursor()
 cursor_setup.execute('CREATE TABLE IF NOT EXISTS users(username text, email text, password text)')
 conn.commit()
 cursor_setup.execute('CREATE TABLE IF NOT EXISTS tasks(username text, date text, task text)')
+conn.commit()
+cursor_setup.execute('CREATE TABLE IF NOT EXISTS completedTasks(username text, date text, task text)')
 conn.commit()
 cursor_setup.close()
 
@@ -83,7 +85,7 @@ def login():
     
     return render_template("login.html", message=message)
 
-@app.route('/home')
+@app.route('/home', methods=['POST', 'GET'])
 def home():
 
     if 'loggedin' in session:
@@ -91,6 +93,11 @@ def home():
         dateandtime = datetime.now()
         rightNow = dateandtime.hour
         status = ( (24 - rightNow) / 24 ) * 100
+        day = dateandtime.day
+        month = dateandtime.month
+        year = dateandtime.year
+        day = str(month) + "-" + str(day) + "-" + str(year)
+
         return render_template("index.html", username=session['username'], status=status)
         
     return render_template("login.html")
@@ -98,14 +105,26 @@ def home():
 @app.route('/myaccount')
 def myaccount():
     if 'loggedin' in session:
-        # image = url_for('static',filename ='Egg_presets.png')
+
+        dateandtime = datetime.now()
+        rightNow = dateandtime.hour
+        status = ( (24 - rightNow) / 24 ) * 100
+        day = dateandtime.day
+        month = dateandtime.month
+        year = dateandtime.year
+        day = str(month) + "-" + str(day) + "-" + str(year)
+
+        cursor = conn.cursor()
+        cursor.execute( 'SELECT task FROM completedTasks WHERE username = ? and date = ?', (session['username'], day,))
+        tasks = cursor.fetchall()
+
         eggs=[url_for('static',filename ='egg1.png'), url_for('static',filename ='egg2.png'), 
         url_for('static',filename ='egg3.png'), url_for('static',filename ='egg4.png'), 
         url_for('static',filename ='egg5.png'), url_for('static',filename ='egg6.png'), 
         url_for('static',filename ='egg7.png'), url_for('static',filename ='egg8.png'), 
         url_for('static',filename ='egg9.png')]
 
-        return render_template("myaccount.html", eggs=eggs)
+        return render_template("myaccount.html", eggs=eggs, tasks=tasks)
 
     return render_template("login.html")
 
@@ -116,10 +135,65 @@ def logout():
 
     return redirect(url_for('welcome'))
 
-@app.errorhandler(404)
-  
+@app.route('/reset')
+def reset():
+    if session['username'] == "benprentice":
+        cursor = conn.cursor()
+        cursor.execute ('DROP TABLE IF EXISTS tasks')
+        conn.commit()
+        cursor.execute('CREATE TABLE tasks(username text, date text, task text)')
+        conn.commit()
+        cursor.execute ('DROP TABLE IF EXISTS completedTasks')
+        conn.commit()
+        cursor.execute('CREATE TABLE completedTasks(username text, date text, task text)')
+        conn.commit()
+    return render_template("404.html")
+
+@app.errorhandler(404)  
 def not_found(e):
     return render_template("404.html")
+
+@app.route('/task_added', methods = ['POST'])
+def task_added():
+    if request.method == "POST":
+        jsonData = request.get_json()
+        print(jsonData["task"])
+
+        dateandtime = datetime.now()
+        rightNow = dateandtime.hour
+        status = ( (24 - rightNow) / 24 ) * 100
+        day = dateandtime.day
+        month = dateandtime.month
+        year = dateandtime.year
+        day = str(month) + "-" + str(day) + "-" + str(year)
+        cursor = conn.cursor()
+        cursor.execute('INSERT INTO tasks ( username, date, task ) VALUES (?, ?, ?)', 
+            (session['username'], day, jsonData["task"],))
+        conn.commit()
+        return {
+            'response' : 'I am the response'
+        }
+
+@app.route('/task_completed', methods = ['POST'])
+def task_completed():
+    if request.method == "POST":
+        jsonData = request.get_json()
+        print(jsonData["task"])
+
+        dateandtime = datetime.now()
+        rightNow = dateandtime.hour
+        status = ( (24 - rightNow) / 24 ) * 100
+        day = dateandtime.day
+        month = dateandtime.month
+        year = dateandtime.year
+        day = str(month) + "-" + str(day) + "-" + str(year)
+        cursor = conn.cursor()
+        cursor.execute('INSERT INTO completedTasks ( username, date, task ) VALUES (?, ?, ?)', 
+            (session['username'], day, jsonData["task"],))
+        conn.commit()
+        return {
+            'response' : 'I am the response'
+        }
 
 if __name__ == "__main__":
     app.run()

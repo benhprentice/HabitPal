@@ -48,11 +48,38 @@ function addTask() {
     return false;
   }
 
+  // send task value to Flask
+  var value = task.value;
+
+  fetch('/task_added', {
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    method: 'POST',
+    body: JSON.stringify({
+      'task': value,
+    })
+  })
+    .then(function (response) {
+
+      if (response.ok) {
+        response.json()
+          .then(function (response) {
+            console.log(response);
+          });
+      }
+      else {
+        throw Error('Something went wrong');
+      }
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+
   // add task to local storage
   localStorage.setItem("tasks", JSON.stringify([...JSON.parse(localStorage.getItem("tasks") || "[]"), { task: task.value, completed: false }]));
 
   // create list item, add innerHTML and append to ul
-  
   const li = document.createElement("li");
   li.innerHTML = `<div><input type="checkbox" onclick="taskComplete(this)" class="check">
   <input type="text" value="${task.value}" class="task" onfocus="getCurrentTask(this)" onblur="editTask(this)">
@@ -60,7 +87,6 @@ function addTask() {
   list.insertBefore(li, list.children[0]);
   // clear input
   task.value = "";
-
 }
 
 
@@ -69,6 +95,32 @@ function taskComplete(event) {
   tasks.forEach(task => {
     if (task.task === event.nextElementSibling.value) {
       task.completed = !task.completed;
+
+      var value = event.nextElementSibling.value;
+      fetch('/task_completed', {
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        method: 'POST',
+        body: JSON.stringify({
+          'task': value,
+        })
+      })
+        .then(function (response) {
+
+          if (response.ok) {
+            response.json()
+              .then(function (response) {
+                console.log(response);
+              });
+          }
+          else {
+            throw Error('Something went wrong');
+          }
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
     }
   });
   localStorage.setItem("tasks", JSON.stringify(tasks));
@@ -87,13 +139,12 @@ function removeTask(event) {
       // delete task
       tasks.splice(tasks.indexOf(task), 1);
       var num = tasks.indexOf(task);
-      
     }
   });
-  
+
   //list.removeChild(list.children[0]);
   localStorage.setItem("tasks", JSON.stringify(tasks));
-  
+
   event.parentElement.remove();
   //event.parentElement.parentNode.removeChild(event.parentNode);
 }
