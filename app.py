@@ -98,14 +98,6 @@ def home():
         year = dateandtime.year
         day = str(month) + "-" + str(day) + "-" + str(year)
 
-        # if request.method == 'POST' and 'trash' in request.form:
-        #     trash = request.form['trash']
-        #     cursor.execute('DELETE FROM tasks ( username, date, task ) VALUES (?, ?, ?)', (session['username'], day, taskz,))
-        #     conn.commit()
-        #     cursor.execute( 'SELECT task FROM tasks WHERE username = ? and date = ?', (session['username'], day,))  
-        #     tasks = cursor.fetchall()
-        #     return render_template("index.html", username=session['username'], status=status, tasks=tasks)
-
         return render_template("index.html", username=session['username'], status=status)
         
     return render_template("login.html")
@@ -113,14 +105,26 @@ def home():
 @app.route('/myaccount')
 def myaccount():
     if 'loggedin' in session:
-        # image = url_for('static',filename ='Egg_presets.png')
+
+        dateandtime = datetime.now()
+        rightNow = dateandtime.hour
+        status = ( (24 - rightNow) / 24 ) * 100
+        day = dateandtime.day
+        month = dateandtime.month
+        year = dateandtime.year
+        day = str(month) + "-" + str(day) + "-" + str(year)
+
+        cursor = conn.cursor()
+        cursor.execute( 'SELECT task FROM completedTasks WHERE username = ? and date = ?', (session['username'], day,))
+        tasks = cursor.fetchall()
+
         eggs=[url_for('static',filename ='egg1.png'), url_for('static',filename ='egg2.png'), 
         url_for('static',filename ='egg3.png'), url_for('static',filename ='egg4.png'), 
         url_for('static',filename ='egg5.png'), url_for('static',filename ='egg6.png'), 
         url_for('static',filename ='egg7.png'), url_for('static',filename ='egg8.png'), 
         url_for('static',filename ='egg9.png')]
 
-        return render_template("myaccount.html", eggs=eggs)
+        return render_template("myaccount.html", eggs=eggs, tasks=tasks)
 
     return render_template("login.html")
 
