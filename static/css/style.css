@@ -69,6 +69,7 @@ background-blend-mode: multiply;
   width: 100%;
   margin: auto;
   border: 15px;
+  margin-bottom: 5rem;
   
 }
 
@@ -87,7 +88,7 @@ background-blend-mode: multiply;
   border-radius: .5rem .5rem 0 0;
   background-color: #4A7C59;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  margin-top: 50px;
+  margin-top: 10px;
 }
 
 .app form {
@@ -111,8 +112,9 @@ background-blend-mode: multiply;
   background-color: white;
   font-size: 25px;
   font-weight: 600;
-  height: 42px;
   width: 10%;
+  position: absolute;
+  right: 32px;
 }
 
 .app ul {
@@ -201,8 +203,49 @@ background-blend-mode: multiply;
   margin-top: 10px;
 }
 
+.health{
+  width: 0%;
+}
+
+.button {
+  background-color: #C49799; 
+  border: 2px solide white;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 12px;
+  margin-top: 30px;
+}
+
+.button:hover {
+  color: #C49799; 
+  border: 2px solid #C49799;
+  background-color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 12px;
+  margin-top: 30px;
+}
+
+.pet-img-homepage{
+  align-items: center;
+  margin-bottom: 40px;
+}
 
 /* change with secondary color when decided */
 /* ul li:nth-child(odd) {
   background: black;
 } */
+
+.py-5 {
+  padding-bottom: 3rem!important;
+  bottom: 0;
+  width: 100%;
+  position: fixed;
+}

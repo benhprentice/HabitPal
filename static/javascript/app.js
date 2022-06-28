@@ -1,6 +1,9 @@
 //Need to fix saved tasks formating. List elemetes are not deleting after deleting tasks. Js and local storage fixed already
 // On app load, get all tasks from localStorage
 window.onload = loadTasks;
+var i = 0;
+//window.onload = makeProgress;
+
 
 // On form submit add task
 document.querySelector("form").addEventListener("submit", e => {
@@ -19,10 +22,15 @@ function loadTasks() {
   tasks.forEach(task => {
     const list = document.getElementById("task-ul");
     const li = document.createElement("li");
-    li.innerHTML = `<div><input type="checkbox" onclick="taskComplete(this)" class="check" ${task.completed ? 'checked' : ''}>
-      <input type="text" value="${task.task}" class="task ${task.completed ? 'completed' : ''}" onfocus="getCurrentTask(this)" onblur="editTask(this)">
-      <i class="fa fa-trash" onclick="removeTask(this)"></i></div>`;
+    li.innerHTML = `<div><input type="checkbox" onclick="taskComplete(this)"
+     class="check" ${task.completed ? 'checked' : ''}>
+    <input type="text" value="${task.task}"
+     class="task ${task.completed ? 'completed' : ''}" onfocus="getCurrentTask(this)" onblur="editTask(this)">
+    <i class="fa fa-trash" onclick="removeTask(this)"></i></div>`;
     list.insertBefore(li, list.children[0]);
+    if (task.completed){
+      makeProgress();
+    }
   });
 }
 
@@ -40,11 +48,38 @@ function addTask() {
     return false;
   }
 
+  // send task value to Flask
+  var value = task.value;
+
+  fetch('/task_added', {
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    method: 'POST',
+    body: JSON.stringify({
+      'task': value,
+    })
+  })
+    .then(function (response) {
+
+      if (response.ok) {
+        response.json()
+          .then(function (response) {
+            console.log(response);
+          });
+      }
+      else {
+        throw Error('Something went wrong');
+      }
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+
   // add task to local storage
   localStorage.setItem("tasks", JSON.stringify([...JSON.parse(localStorage.getItem("tasks") || "[]"), { task: task.value, completed: false }]));
 
   // create list item, add innerHTML and append to ul
-  
   const li = document.createElement("li");
   li.innerHTML = `<div><input type="checkbox" onclick="taskComplete(this)" class="check">
   <input type="text" value="${task.value}" class="task" onfocus="getCurrentTask(this)" onblur="editTask(this)">
@@ -52,19 +87,48 @@ function addTask() {
   list.insertBefore(li, list.children[0]);
   // clear input
   task.value = "";
-
 }
+
 
 function taskComplete(event) {
   let tasks = Array.from(JSON.parse(localStorage.getItem("tasks")));
   tasks.forEach(task => {
     if (task.task === event.nextElementSibling.value) {
       task.completed = !task.completed;
+
+      var value = event.nextElementSibling.value;
+      fetch('/task_completed', {
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        method: 'POST',
+        body: JSON.stringify({
+          'task': value,
+        })
+      })
+        .then(function (response) {
+
+          if (response.ok) {
+            response.json()
+              .then(function (response) {
+                console.log(response);
+              });
+          }
+          else {
+            throw Error('Something went wrong');
+          }
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
     }
   });
   localStorage.setItem("tasks", JSON.stringify(tasks));
   event.nextElementSibling.classList.toggle("completed");
+
+ 
 }
+
 
 function removeTask(event) {
   let tasks = Array.from(JSON.parse(localStorage.getItem("tasks")));
@@ -75,16 +139,14 @@ function removeTask(event) {
       // delete task
       tasks.splice(tasks.indexOf(task), 1);
       var num = tasks.indexOf(task);
-      
     }
   });
-  
+
   //list.removeChild(list.children[0]);
   localStorage.setItem("tasks", JSON.stringify(tasks));
-  
+
   event.parentElement.remove();
   //event.parentElement.parentNode.removeChild(event.parentNode);
-  
 }
 
 // store current task to track changes
@@ -122,3 +184,11 @@ function editTask(event) {
   localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
+function makeProgress() {
+  var healthBar = document.querySelector(".progress-bar");
+    if(i <= 90){
+      i = i + 10;
+        healthBar.style.width = i + "%";
+        healthBar.innerText = i + "%";
+    }
+}
