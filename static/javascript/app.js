@@ -192,3 +192,4 @@ function makeProgress() {
         healthBar.innerText = i + "%";
     }
 }
+

@@ -54,9 +54,10 @@
           </div>
           <div class="app">
 
-            <div class="progress">
+            <!-- <div class="progress">
               <div id = "health" class="progress-bar progress-bar-striped bg-info progress-bar-animated" role="progressbar"></div>
-            </div>
+            </div> -->
+            <progress id="bar" style="width: 75%" style="height: 100px" value="{{ status }}" max="100">32%</progress>
 
             <button class="button" onClick="window.location.reload();">Feed Pet</button>
             
