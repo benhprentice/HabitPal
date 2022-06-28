@@ -111,8 +111,9 @@ background-blend-mode: multiply;
   background-color: white;
   font-size: 25px;
   font-weight: 600;
-  height: 42px;
   width: 10%;
+  position: absolute;
+  right: 32px;
 }
 
 .app ul {

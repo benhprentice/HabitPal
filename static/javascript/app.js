@@ -1,6 +1,9 @@
 //Need to fix saved tasks formating. List elemetes are not deleting after deleting tasks. Js and local storage fixed already
 // On app load, get all tasks from localStorage
 window.onload = loadTasks;
+var i = 0;
+//window.onload = makeProgress;
+
 
 // On form submit add task
 document.querySelector("form").addEventListener("submit", e => {
@@ -19,10 +22,15 @@ function loadTasks() {
   tasks.forEach(task => {
     const list = document.getElementById("task-ul");
     const li = document.createElement("li");
-    li.innerHTML = `<div><input type="checkbox" onclick="taskComplete(this)" class="check" ${task.completed ? 'checked' : ''}>
-      <input type="text" value="${task.task}" class="task ${task.completed ? 'completed' : ''}" onfocus="getCurrentTask(this)" onblur="editTask(this)">
-      <i class="fa fa-trash" onclick="removeTask(this)"></i></div>`;
+    li.innerHTML = `<div><input type="checkbox" onclick="taskComplete(this)"
+     class="check" ${task.completed ? 'checked' : ''}>
+    <input type="text" value="${task.task}"
+     class="task ${task.completed ? 'completed' : ''}" onfocus="getCurrentTask(this)" onblur="editTask(this)">
+    <i class="fa fa-trash" onclick="removeTask(this)"></i></div>`;
     list.insertBefore(li, list.children[0]);
+    if (task.completed){
+      makeProgress();
+    }
   });
 }
 
@@ -81,6 +89,7 @@ function addTask() {
   task.value = "";
 }
 
+
 function taskComplete(event) {
   let tasks = Array.from(JSON.parse(localStorage.getItem("tasks")));
   tasks.forEach(task => {
@@ -116,7 +125,10 @@ function taskComplete(event) {
   });
   localStorage.setItem("tasks", JSON.stringify(tasks));
   event.nextElementSibling.classList.toggle("completed");
+
+ 
 }
+
 
 function removeTask(event) {
   let tasks = Array.from(JSON.parse(localStorage.getItem("tasks")));
@@ -172,3 +184,11 @@ function editTask(event) {
   localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
+function makeProgress() {
+  var healthBar = document.querySelector(".progress-bar");
+    if(i <= 90){
+      i = i + 10;
+        healthBar.style.width = i + "%";
+        healthBar.innerText = i + "%";
+    }
+}
