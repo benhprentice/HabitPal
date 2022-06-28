@@ -36,6 +36,9 @@
             onmouseout="this.src='../static/button_images/myaccount1.png';"/>
           </a>
         </li>
+          <li class="nav-item active">
+          <a class="nav-link" href="{{ url_for('store') }}">Store</a>
+        </li>
 
       </ul>
       <a href="{{ url_for('logout') }}" class="btn btn-dark">Sign Out</a>
@@ -75,11 +78,9 @@
     </div>
   </div>
 
-  <div class="footer">
-    <p>Habit Pal!</p>
-    <a href="https://www.facebook.com/" target="_blank" class="fa fa-facebook"></a>
-    <a href="https://twitter.com/" target="_blank" class="fa fa-twitter"></a>
-  </div>
+  <footer class="py-5 bg-dark">
+    <div class="container"><p class="m-0 text-center text-white">Copyright &copy; HabitPal 2022</p></div>
+  </footer>
 
 </body>
 
