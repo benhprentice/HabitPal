@@ -69,6 +69,7 @@ background-blend-mode: multiply;
   width: 100%;
   margin: auto;
   border: 15px;
+  margin-bottom: 5rem;
   
 }
 
@@ -241,3 +242,10 @@ background-blend-mode: multiply;
 /* ul li:nth-child(odd) {
   background: black;
 } */
+
+.py-5 {
+  padding-bottom: 3rem!important;
+  bottom: 0;
+  width: 100%;
+  position: fixed;
+}
