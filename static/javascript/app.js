@@ -116,8 +116,6 @@ function taskComplete(event) {
   });
   localStorage.setItem("tasks", JSON.stringify(tasks));
   event.nextElementSibling.classList.toggle("completed");
-
-
 }
 
 function removeTask(event) {
