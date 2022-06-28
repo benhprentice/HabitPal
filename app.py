@@ -28,6 +28,10 @@ cursor_setup.close()
 def welcome():
     return render_template("welcome.html")
 
+@app.route('/store')
+def store():
+    return render_template("store.html")
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     message = ''
