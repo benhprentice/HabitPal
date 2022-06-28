@@ -38,9 +38,13 @@
               onmouseout="this.src='../static/button_images/myaccount1.png';"/>
             </a>
           </li>
-            <li class="nav-item">
-            <a class="nav-link" href="{{ url_for('store') }}">Store</a>
-          </li>
+            <li class="nav-item active">
+                  <a class="nav-link" href="{{ url_for('store') }}">
+                    <img src= ../static/button_images/shop1.png width="100px" height="25px"
+                    onmouseover="this.src='../static/button_images/shop2.png';"
+                    onmouseout="this.src='../static/button_images/shop1.png';"/>
+                  </a>
+                    </li>
         </ul>
 
       </div>
