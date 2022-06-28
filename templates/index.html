@@ -23,10 +23,18 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                  <a class="nav-link" href="{{ url_for('home') }}">Home <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="{{ url_for('home') }}">
+                    <img src= ../static/button_images/home1.png width="100px" height="25px"
+                    onmouseover="this.src='../static/button_images/home2.png';"
+                    onmouseout="this.src='../static/button_images/home1.png';"/>
+                    <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
-                  <a class="nav-link" href="{{ url_for('myaccount') }}">My Account</a>
+                  <a class="nav-link" href="{{ url_for('myaccount') }}">
+                    <img src= ../static/button_images/myaccount1.png width="100px" height="25px"
+                    onmouseover="this.src='../static/button_images/myaccount2.png';"
+                    onmouseout="this.src='../static/button_images/myaccount1.png';"/>
+                  </a>
                 </li>
                 
               </ul>
@@ -51,7 +59,12 @@
 
           <form>
             <input type="text" placeholder="New Task Here">
-            <button type="submit">&plus;</button>
+            <button type="submit">
+              <img src= ../static/button_images/add1.png 
+                    height="42px" width="90px"
+                    onmouseover="this.src='../static/button_images/add2.png';"
+                    onmouseout="this.src='../static/button_images/add1.png';"/>
+            </button>
           </form>
           <ul id="task-ul"></ul>
         </div>
