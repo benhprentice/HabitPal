@@ -88,8 +88,6 @@ def home():
 
     if 'loggedin' in session:
 
-        cursor = conn.cursor()
-
         dateandtime = datetime.now()
         rightNow = dateandtime.hour
         status = ( (24 - rightNow) / 24 ) * 100
@@ -97,28 +95,16 @@ def home():
         month = dateandtime.month
         year = dateandtime.year
         day = str(month) + "-" + str(day) + "-" + str(year)
-        cursor.execute( 'SELECT task FROM tasks WHERE username = ? and date = ?', (session['username'], day,))  
-        tasks = cursor.fetchall()
 
+        # if request.method == 'POST' and 'trash' in request.form:
+        #     trash = request.form['trash']
+        #     cursor.execute('DELETE FROM tasks ( username, date, task ) VALUES (?, ?, ?)', (session['username'], day, taskz,))
+        #     conn.commit()
+        #     cursor.execute( 'SELECT task FROM tasks WHERE username = ? and date = ?', (session['username'], day,))  
+        #     tasks = cursor.fetchall()
+        #     return render_template("index.html", username=session['username'], status=status, tasks=tasks)
 
-
-        if request.method == 'POST' and 'taskz' in request.form:
-            taskz = request.form['taskz']
-            cursor.execute('INSERT INTO tasks ( username, date, task ) VALUES (?, ?, ?)', (session['username'], day, taskz,))
-            conn.commit()
-            cursor.execute( 'SELECT task FROM tasks WHERE username = ? and date = ?', (session['username'], day,))  
-            tasks = cursor.fetchall()
-            return render_template("index.html", username=session['username'], status=status, tasks=tasks)
-
-        if request.method == 'POST' and 'trash' in request.form:
-            trash = request.form['trash']
-            cursor.execute('DELETE FROM tasks ( username, date, task ) VALUES (?, ?, ?)', (session['username'], day, taskz,))
-            conn.commit()
-            cursor.execute( 'SELECT task FROM tasks WHERE username = ? and date = ?', (session['username'], day,))  
-            tasks = cursor.fetchall()
-            return render_template("index.html", username=session['username'], status=status, tasks=tasks)
-
-        return render_template("index.html", username=session['username'], status=status, tasks=tasks)
+        return render_template("index.html", username=session['username'], status=status)
         
     return render_template("login.html")
 
@@ -162,6 +148,19 @@ def ajax():
     if request.method == "POST":
         jsonData = request.get_json()
         print(jsonData["task"])
+
+        dateandtime = datetime.now()
+        rightNow = dateandtime.hour
+        status = ( (24 - rightNow) / 24 ) * 100
+        day = dateandtime.day
+        month = dateandtime.month
+        year = dateandtime.year
+        day = str(month) + "-" + str(day) + "-" + str(year)
+        cursor = conn.cursor()
+        cursor.execute('INSERT INTO tasks ( username, date, task ) VALUES (?, ?, ?)', 
+            (session['username'], day, jsonData["task"],))
+        conn.commit()
+
         return {
             'response' : 'I am the response'
         }
