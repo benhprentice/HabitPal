@@ -45,10 +45,12 @@
             <div class="card-body">
               <p class="card-text">Grogglepuss</p>
               <br>
-              <h6><u>Tasks Completed Today</u></h6>
-              {% for i in tasks %}
-              <p>{{ i[0] }}</p>
-              {% endfor %}
+              <ul>
+                <h6><u>Tasks Completed Today</u></h6>
+                {% for i in tasks %}
+                <li>{{ i[0] }}</li>
+                {% endfor %}
+              </ul>
             </div>
           </div>
         </div>
