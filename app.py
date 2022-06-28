@@ -101,6 +101,12 @@ def home():
         month = dateandtime.month
         year = dateandtime.year
         day = str(month) + "-" + str(day) + "-" + str(year)
+        cursor = conn.cursor()
+        cursor.execute( 'SELECT * FROM completedTasks WHERE username = ? and date = ?', (session['username'], day,))
+        vari = cursor.fetchall()
+        vari = len(vari)
+        vari = vari * 10
+        status = vari + status
 
         return render_template("index.html", username=session['username'], status=status)
         
