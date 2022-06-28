@@ -22,6 +22,8 @@ cursor_setup.execute('CREATE TABLE IF NOT EXISTS users(username text, email text
 conn.commit()
 cursor_setup.execute('CREATE TABLE IF NOT EXISTS tasks(username text, date text, task text)')
 conn.commit()
+cursor_setup.execute('CREATE TABLE IF NOT EXISTS completedTasks(username text, date text, task text)')
+conn.commit()
 cursor_setup.close()
 
 @app.route('/')
@@ -143,8 +145,8 @@ def reset():
 def not_found(e):
     return render_template("404.html")
 
-@app.route('/ajax', methods = ['POST'])
-def ajax():
+@app.route('/task_added', methods = ['POST'])
+def task_added():
     if request.method == "POST":
         jsonData = request.get_json()
         print(jsonData["task"])
@@ -158,6 +160,28 @@ def ajax():
         day = str(month) + "-" + str(day) + "-" + str(year)
         cursor = conn.cursor()
         cursor.execute('INSERT INTO tasks ( username, date, task ) VALUES (?, ?, ?)', 
+            (session['username'], day, jsonData["task"],))
+        conn.commit()
+
+        return {
+            'response' : 'I am the response'
+        }
+
+@app.route('/task_completed', methods = ['POST'])
+def task_completed():
+    if request.method == "POST":
+        jsonData = request.get_json()
+        print(jsonData["task"])
+
+        dateandtime = datetime.now()
+        rightNow = dateandtime.hour
+        status = ( (24 - rightNow) / 24 ) * 100
+        day = dateandtime.day
+        month = dateandtime.month
+        year = dateandtime.year
+        day = str(month) + "-" + str(day) + "-" + str(year)
+        cursor = conn.cursor()
+        cursor.execute('INSERT INTO completedTasks ( username, date, task ) VALUES (?, ?, ?)', 
             (session['username'], day, jsonData["task"],))
         conn.commit()
 
