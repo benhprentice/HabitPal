@@ -192,3 +192,25 @@ function makeProgress() {
         healthBar.innerText = i + "%";
     }
 }
+
+
+
+
+/***************************/
+/* PET SELECTION AND LOGIC */
+/***************************/
+
+
+function changeToGrop()
+{
+var img = document.getElementById("currentPet");
+img.src="../static/murg_blue.png";
+return false;
+}
+
+function changeToRex()
+{
+  var img = document.getElementById("currentPet");
+img.src="../static/rex_beige_happy 2.png";
+return false;
+}
