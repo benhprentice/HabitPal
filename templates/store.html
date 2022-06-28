@@ -6,48 +6,53 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Habit Pal P</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <link rel="stylesheet" href="{{ url_for('static', filename='css/style_store.css') }}" type="text/css">
     </head>
     <body>
         <!-- Navigation-->
-          <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="{{ url_for('welcome') }}">Habit Pal!</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="{{ url_for('home') }}">
-            <img src= ../static/button_images/home1.png width="100px" height="25px"
-            onmouseover="this.src='../static/button_images/home2.png';"
-            onmouseout="this.src='../static/button_images/home1.png';"/>
-            <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="{{ url_for('myaccount') }}">
-            <img src= ../static/button_images/myaccount1.png width="100px" height="25px"
-            onmouseover="this.src='../static/button_images/myaccount2.png';"
-            onmouseout="this.src='../static/button_images/myaccount1.png';"/>
-          </a>
-        </li>
-
-      </ul>
-      <a href="{{ url_for('logout') }}" class="btn btn-dark">Sign Out</a>
-
-    </div>
-  </nav>
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="{{ url_for('welcome') }}">Habit Pal!</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="{{ url_for('home') }}">
+                    <img src= ../static/button_images/home1.png width="100px" height="25px"
+                    onmouseover="this.src='../static/button_images/home2.png';"
+                    onmouseout="this.src='../static/button_images/home1.png';"/>
+                    <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="{{ url_for('myaccount') }}">
+                    <img src= ../static/button_images/myaccount1.png width="100px" height="25px"
+                    onmouseover="this.src='../static/button_images/myaccount2.png';"
+                    onmouseout="this.src='../static/button_images/myaccount1.png';"/>
+                  </a>
+                    
+                </li>
+                  <li class="nav-item active">
+                  <a class="nav-link" href="{{ url_for('store') }}">
+                    <img src= ../static/button_images/shop1.png width="100px" height="25px"
+                    onmouseover="this.src='../static/button_images/shop2.png';"
+                    onmouseout="this.src='../static/button_images/shop1.png';"/>
+                  </a>
+                    
+                </li>
+              </ul>
+             
+              
+            </div>
+              <a href="{{ url_for('logout') }}" class="btn btn-dark">Sign Out</a>
+        </nav>
         <!-- Header-->
-        <header class="bg-dark py-5">
+        <header class="bg-light py-5">
             <div class="container px-4 px-lg-5 my-5">
-                <div class="text-center text-white">
+                <div class="text-center text-dark">
                     <h1 class="display-4 fw-bolder">Pet Egg Shop</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">Pick a new friend to bring home!!!</p>
+                    <p class="lead fw-normal text-dark-50 mb-0">Pick a new friend to bring home!!!</p>
                 </div>
             </div>
         </header>
@@ -58,12 +63,12 @@
                     <div class="col mb-5">
                         <div class="card h-100">
                             <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                            <img class="card-img-top" src="../static/egg1.png" alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">Egg</h5>
+                                    <h5 class="fw-bolder">Lit Egg</h5>
                                     <!-- Product price-->
                                     1000 Points
                                 </div>
@@ -77,12 +82,12 @@
                     <div class="col mb-5">
                         <div class="card h-100">
                             <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                            <img class="card-img-top" src="../static/egg7.png" alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">Egg</h5>
+                                    <h5 class="fw-bolder">Avocado Egg</h5>
                                     <!-- Product reviews-->
                                     <div class="d-flex justify-content-center small text-warning mb-2">
                                     </div>
@@ -99,12 +104,12 @@
                     <div class="col mb-5">
                         <div class="card h-100">
                             <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                            <img class="card-img-top" src="../static/egg9.png" alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">Egg</h5>
+                                    <h5 class="fw-bolder">CSGO T-SIDE Egg</h5>
                                     <!-- Product price-->
                                     1000 Points
                                 </div>
@@ -118,12 +123,12 @@
                     <div class="col mb-5">
                         <div class="card h-100">
                             <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                            <img class="card-img-top" src="../static/egg2.png" alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">Egg</h5>
+                                    <h5 class="fw-bolder">Cloudy Egg</h5>
                                     <!-- Product reviews-->
                                     <div class="d-flex justify-content-center small text-warning mb-2">
                                     </div>
@@ -140,12 +145,12 @@
                     <div class="col mb-5">
                         <div class="card h-100">
                             <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                            <img class="card-img-top" src="../static/egg3.png" alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">Egg</h5>
+                                    <h5 class="fw-bolder">Ice Cream Egg</h5>
                                     <!-- Product price-->
                                     1000 Points
                                 </div>
@@ -159,14 +164,14 @@
                     <div class="col mb-5">
                         <div class="card h-100">
                             <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                            <img class="card-img-top" src="../static/egg6.png" alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">Egg</h5>
+                                    <h5 class="fw-bolder">Good Habits Egg</h5>
                                     <!-- Product price-->
-                                    1000
+                                    1000 Points
                                 </div>
                             </div>
                             <!-- Product actions-->
@@ -180,12 +185,12 @@
                             <!-- Sale badge-->
                             
                             <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                            <img class="card-img-top" src="../static/egg5.png" alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">Egg</h5>
+                                    <h5 class="fw-bolder">Void Egg</h5>
                                     <!-- Product reviews-->
                                     <div class="d-flex justify-content-center small text-warning mb-2">
                                     </div>
@@ -202,17 +207,17 @@
                     <div class="col mb-5">
                         <div class="card h-100">
                             <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                            <img class="card-img-top" src="../static/egg8.png" alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">Random Egg</h5>
+                                    <h5 class="fw-bolder">Random Legendary Egg</h5>
                                     <!-- Product reviews-->
                                     <div class="d-flex justify-content-center small text-warning mb-2">    
                                     </div>
                                     <!-- Product price-->
-                                    1000 Points
+                                    5000 Points
                                 </div>
                             </div>
                             <!-- Product actions-->
