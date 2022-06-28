@@ -139,6 +139,10 @@ def reset():
         conn.commit()
         cursor.execute('CREATE TABLE tasks(username text, date text, task text)')
         conn.commit()
+        cursor.execute ('DROP TABLE IF EXISTS completedTasks')
+        conn.commit()
+        cursor.execute('CREATE TABLE completedTasks(username text, date text, task text)')
+        conn.commit()
     return render_template("404.html")
 
 @app.errorhandler(404)  
@@ -162,7 +166,6 @@ def task_added():
         cursor.execute('INSERT INTO tasks ( username, date, task ) VALUES (?, ?, ?)', 
             (session['username'], day, jsonData["task"],))
         conn.commit()
-
         return {
             'response' : 'I am the response'
         }
@@ -184,7 +187,6 @@ def task_completed():
         cursor.execute('INSERT INTO completedTasks ( username, date, task ) VALUES (?, ?, ?)', 
             (session['username'], day, jsonData["task"],))
         conn.commit()
-
         return {
             'response' : 'I am the response'
         }
