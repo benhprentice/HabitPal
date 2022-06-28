@@ -1,7 +1,10 @@
 //Need to fix saved tasks formating. List elemetes are not deleting after deleting tasks. Js and local storage fixed already
-// On app load, get all tasks from localStorage
-window.onload = loadTasks;
+// On app load, get all tasks from localStorage, find pet chosen
+var isRex = false;
+var isGrop = false;
+window.onload = loadTasks, keepPet;
 var i = 0;
+
 //window.onload = makeProgress;
 
 
@@ -200,17 +203,36 @@ function makeProgress() {
 /* PET SELECTION AND LOGIC */
 /***************************/
 
+/*
+function keepPet()
+{
+  if (isRex == true){
+    var img = document.getElementById("chosenPet");
+    img.src="../static/murg_blue.png";
+  }
+
+  else if (isGrop == true){
+    var img = document.getElementById("chosenPet");
+    img.src="../static/rex_beige_happy 2.png";
+  }
+
+}
+*/
+
 
 function changeToGrop()
 {
 var img = document.getElementById("currentPet");
 img.src="../static/murg_blue.png";
-return false;
+isGrop = true;
+return;
 }
 
 function changeToRex()
 {
-  var img = document.getElementById("currentPet");
+var img = document.getElementById("currentPet");
 img.src="../static/rex_beige_happy 2.png";
-return false;
+isRex = true;
+return;
 }
+
