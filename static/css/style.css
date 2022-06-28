@@ -1,7 +1,6 @@
 /* Using "!important" to override bootstrap css*/
 
 .main-container{
-  border-top: 10px solid #C49799;
   width: 100%;
   height: 100vh;
   background-color:#A9927D;
