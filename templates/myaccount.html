@@ -23,10 +23,21 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="{{ url_for('home') }}">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="{{ url_for('home') }}">
+            <img src= ../static/button_images/home1.png width="100px" height="25px"
+            onmouseover="this.src='../static/button_images/home2.png';"
+            onmouseout="this.src='../static/button_images/home1.png';"/>
+            <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="{{ url_for('myaccount') }}">My Account</a>
+          <a class="nav-link" href="{{ url_for('myaccount') }}">
+            <img src= ../static/button_images/myaccount1.png width="100px" height="25px"
+            onmouseover="this.src='../static/button_images/myaccount2.png';"
+            onmouseout="this.src='../static/button_images/myaccount1.png';"/>
+          </a>
+        </li>
+          <li class="nav-item active">
+          <a class="nav-link" href="{{ url_for('store') }}">Store</a>
         </li>
 
       </ul>
@@ -45,10 +56,12 @@
             <div class="card-body">
               <p class="card-text">Grogglepuss</p>
               <br>
-              <h6><u>Tasks Completed Today</u></h6>
-              {% for i in tasks %}
-              <p>i</p>
-              {% endfor %}
+              <ul>
+                <h6><u>Tasks Completed Today</u></h6>
+                {% for i in tasks %}
+                <li>{{ i[0] }}</li>
+                {% endfor %}
+              </ul>
             </div>
           </div>
         </div>
@@ -64,14 +77,6 @@
       </div>
     </div>
   </div>
-
-  <!-- <div class="MA-jumbotron"> -->
-  <!-- <h1 class="display-4">Tasks finishd could maybe keep count here.</h1> -->
-  <!-- <p class="lead">Maybe place a tasks bar here and have different levels or milestones</p> -->
-  <!-- <hr class="my-4"> -->
-  <!-- <h1 class="display-4"> Other taskss here.</h1> -->
-  <!-- <p>place another progress bar here</p> -->
-  <!-- </div> -->
 
   <div class="footer">
     <p>Habit Pal!</p>
