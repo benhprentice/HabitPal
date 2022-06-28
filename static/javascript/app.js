@@ -43,7 +43,7 @@ function addTask() {
 
 
 
-  
+  var value = task.value;
 
   fetch('/ajax', {
     headers: {
@@ -51,8 +51,7 @@ function addTask() {
     },
     method: 'POST',
     body: JSON.stringify({
-      'name': 'Rahul Kumar',
-      'country': 'India'
+      'task': value,
     })
   })
     .then(function (response) {

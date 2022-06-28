@@ -161,16 +161,10 @@ def not_found(e):
 def ajax():
     if request.method == "POST":
         jsonData = request.get_json()
-        print(jsonData)
+        print(jsonData["task"])
         return {
             'response' : 'I am the response'
         }
-    return render_template('index.html')
-#    req = request.get_json()
-#    print(req)
-#    print("yoooo")
-#    res = make_response(jsonify({"message": "JSON received"}), 200)
-#    return res
 
 if __name__ == "__main__":
     app.run()
