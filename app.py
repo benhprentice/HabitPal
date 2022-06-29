@@ -95,9 +95,9 @@ def home():
     if 'loggedin' in session:
 
         dateandtime = datetime.now()
-        rightNow = dateandtime.hour
+        rightNow = dateandtime.hour + ( dateandtime.minute/60 )
         status = ( (24 - rightNow) / 24 ) * 100
-        day = dateandtime.day
+        day = dateandtime.day 
         month = dateandtime.month
         year = dateandtime.year
         day = str(month) + "-" + str(day) + "-" + str(year)
@@ -108,7 +108,20 @@ def home():
         vari = vari * 10
         status = vari + status
 
-        return render_template("index.html", username=session['username'], status=status)
+        if status < 20:
+            image = url_for('static',filename ='murg_orange_hurt.png')
+        elif status < 40:
+            image = url_for('static',filename ='murg_orange.png')
+        elif status < 50:
+            image = url_for('static',filename ='murg_blue_teal_hurt.png')
+        elif status < 70:
+            image = url_for('static',filename ='murg_blue.png')
+        elif status < 90:
+            image = url_for('static',filename ='murg_spikey_hurt.png')
+        else:
+            image = url_for('static',filename ='murg_spikey_green.png')
+
+        return render_template("index.html", username=session['username'], status=status, image=image)
         
     return render_template("login.html")
 
