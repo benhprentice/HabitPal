@@ -68,7 +68,7 @@ background-blend-mode: multiply;
   width: 100%;
   margin: auto;
   border: 15px;
-  margin-bottom: 5rem;
+  margin-bottom: 8rem;
   
 }
 
@@ -243,8 +243,12 @@ background-blend-mode: multiply;
 } */
 
 .py-5 {
-  padding-bottom: 3rem!important;
+  padding-bottom: 1rem!important;
   bottom: 0;
   width: 100%;
   position: fixed;
+  padding-top: 1rem!important;
+}
+.p-4{
+  padding-top: 1rem!important;
 }
