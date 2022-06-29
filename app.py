@@ -25,6 +25,8 @@ cursor_setup.execute('CREATE TABLE IF NOT EXISTS tasks(username text, date text,
 conn.commit()
 cursor_setup.execute('CREATE TABLE IF NOT EXISTS completedTasks(username text, date text, task text)')
 conn.commit()
+cursor_setup.execute('CREATE TABLE IF NOT EXISTS points(username text, points int)')
+conn.commit()
 cursor_setup.close()
 
 @app.route('/')
@@ -120,7 +122,9 @@ def home():
             status = 100
             if Counter == 0:
                 msg = "You get 200 points!"
-                Counter += 1    
+                Counter += 1
+                cursor.execute('INSERT INTO points ( username, points ) VALUES (?, ?)', (session['username'], 200)) 
+                conn.commit() 
         else:
             Counter = 0
 
@@ -154,6 +158,11 @@ def myaccount():
         cursor = conn.cursor()
         cursor.execute( 'SELECT task FROM completedTasks WHERE username = ? and date = ?', (session['username'], day,))
         tasks = cursor.fetchall()
+        cursor.execute( 'SELECT points FROM points WHERE username = ?', (session['username'],))
+        points = cursor.fetchall()
+        pointsTotal = 0
+        for i in points:
+            pointsTotal += i[0]
 
         eggs=[url_for('static',filename ='egg1.png'), url_for('static',filename ='egg2.png'), 
         url_for('static',filename ='egg3.png'), url_for('static',filename ='egg4.png'), 
@@ -161,7 +170,7 @@ def myaccount():
         url_for('static',filename ='egg7.png'), url_for('static',filename ='egg8.png'), 
         url_for('static',filename ='egg9.png'), url_for('static',filename ='egg10.png')]
 
-        return render_template("myaccount.html", eggs=eggs, tasks=tasks)
+        return render_template("myaccount.html", eggs=eggs, tasks=tasks, points=pointsTotal)
 
     return render_template("login.html")
 
