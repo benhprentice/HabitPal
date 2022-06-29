@@ -32,7 +32,10 @@ def welcome():
 
 @app.route('/store')
 def store():
-    return render_template("store.html")
+    if 'loggedin' in session:
+        return render_template("store.html")
+    return render_template("login.html")
+
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -108,6 +111,8 @@ def home():
         vari = vari * 10
         status = vari + status
         status = int(status)
+        if status >= 100:
+            status = 100
 
         if status < 20:
             image = url_for('static',filename ='murg_orange_hurt.png')
