@@ -107,6 +107,7 @@ def home():
         vari = len(vari)
         vari = vari * 10
         status = vari + status
+        status = int(status)
 
         if status < 20:
             image = url_for('static',filename ='murg_orange_hurt.png')
