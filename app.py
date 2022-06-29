@@ -117,8 +117,6 @@ def myaccount():
     if 'loggedin' in session:
 
         dateandtime = datetime.now()
-        rightNow = dateandtime.hour
-        status = ( (24 - rightNow) / 24 ) * 100
         day = dateandtime.day
         month = dateandtime.month
         year = dateandtime.year
@@ -170,8 +168,6 @@ def task_added():
         print(jsonData["task"])
 
         dateandtime = datetime.now()
-        rightNow = dateandtime.hour
-        status = ( (24 - rightNow) / 24 ) * 100
         day = dateandtime.day
         month = dateandtime.month
         year = dateandtime.year
@@ -191,8 +187,6 @@ def task_completed():
         print(jsonData["task"])
 
         dateandtime = datetime.now()
-        rightNow = dateandtime.hour
-        status = ( (24 - rightNow) / 24 ) * 100
         day = dateandtime.day
         month = dateandtime.month
         year = dateandtime.year
