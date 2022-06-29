@@ -47,36 +47,39 @@
               
             </div>
         </nav>
-        <div class="jumbotron">
-          <h1 class="display-4">Welcome to Habit Pal!</h1>
-          <div class="pet-img-homepage">
-            <img src="{{url_for('static',filename ='jwa_concept_MURGv5.PNG')}}" alt="">
-          </div>
-          <div class="app">
 
-            <div class="progress">
-              <div id = "health" class="progress-bar progress-bar-striped bg-info progress-bar-animated" role="progressbar"></div>
-            </div>
-
-            <button class="button" onClick="window.location.reload();">Feed Pet</button>
-            
-            <h1>To Do:</h1>
-
-          <form>
-            <input type="text" placeholder="New Task Here">
-            <button type="submit">
-              <img src= ../static/button_images/add1.png 
-                    height="42px" width="90px"
-                    onmouseover="this.src='../static/button_images/add2.png';"
-                    onmouseout="this.src='../static/button_images/add1.png';"/>
-            </button>
-          </form>
-          <ul id="task-ul"></ul>
-        </div>
+    <div class="jumbotron">
+      <div class="pet-img-homepage">
+        <img src="{{ image }}" width="40%">
       </div>
+      <div class="app">
+        <progress id="bar" style="width: 75%" style="height: 100px" value="{{ status }}" max="100">32%</progress>
+        <style>
+          #bar {
+            color: red;
+            height: 3rem;
+          }
+        </style>
+        <h4>Health: {{ status }}%</h4>
+
+        <button class="button" onClick="window.location.reload();">Feed Pet</button>
+
+        <h1>To Do:</h1>
+
+        <form>
+          <input type="text" placeholder="New Task Here">
+          <button type="submit">
+            <img src=../static/button_images/add1.png height="42px" width="90px"
+              onmouseover="this.src='../static/button_images/add2.png';"
+              onmouseout="this.src='../static/button_images/add1.png';" />
+          </button>
+        </form>
+        <ul id="task-ul"></ul>
+      </div>
+    </div>
 
   </div>
-  <footer class="py-5 bg-dark">
+  <footer class="footindex bg-dark">
     <!-- Grid container -->
   <div class="container p-4 pb-0 text-center">
     <section class="text-center">

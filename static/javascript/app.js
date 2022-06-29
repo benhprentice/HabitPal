@@ -28,9 +28,9 @@ function loadTasks() {
      class="task ${task.completed ? 'completed' : ''}" onfocus="getCurrentTask(this)" onblur="editTask(this)">
     <i class="fa fa-trash" onclick="removeTask(this)"></i></div>`;
     list.insertBefore(li, list.children[0]);
-    if (task.completed){
-      makeProgress();
-    }
+    // if (task.completed){
+    //   makeProgress();
+    // }
   });
 }
 
@@ -192,3 +192,4 @@ function makeProgress() {
         healthBar.innerText = i + "%";
     }
 }
+
