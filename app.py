@@ -144,7 +144,7 @@ def myaccount():
         url_for('static',filename ='egg3.png'), url_for('static',filename ='egg4.png'), 
         url_for('static',filename ='egg5.png'), url_for('static',filename ='egg6.png'), 
         url_for('static',filename ='egg7.png'), url_for('static',filename ='egg8.png'), 
-        url_for('static',filename ='egg9.png')]
+        url_for('static',filename ='egg9.png'), url_for('static',filename ='egg10.png')]
 
         return render_template("myaccount.html", eggs=eggs, tasks=tasks)
 
