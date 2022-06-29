@@ -59,29 +59,40 @@
   <footer class="py-5 bg-dark">
     <!-- Grid container -->
   <div class="container p-4 pb-0">
-    <!-- Buttons -->
+    <!-- Section: Social media -->
     <section class="mb-4">
-      <!-- Home, 3 and 4 -->
-      <a class="nav-link" href="{{ url_for('home') }}">
-        <img src= ../static/button_images/home1.png width="100px" height="25px"
-        onmouseover="this.src='../static/button_images/home2.png';"
-        onmouseout="this.src='../static/button_images/home1.png';"/>
-        <span class="sr-only">(current)</span></a>
+      <!-- Home -->
+      <a
+        class="btn btn-outline-light btn-floating m-1"
+        style="background-color: #343a40"
+        href="{{ url_for('home') }}"
+        role="button"
+        ><img src= ../static/button_images/home3.png width="100px" height="25px"
+        onmouseover="this.src='../static/button_images/home4.png';"
+        onmouseout="this.src='../static/button_images/home3.png';"/></a>
 
-      <!-- My Account, 3 and 4 -->
-      <a class="nav-link" href="{{ url_for('myaccount') }}">
-        <img src= ../static/button_images/myaccount1.png width="100px" height="25px"
-        onmouseover="this.src='../static/button_images/myaccount2.png';"
-        onmouseout="this.src='../static/button_images/myaccount1.png';"/>
-      </a>
+      <!-- My Account -->
+      <a
+      class="btn btn-outline-light btn-floating m-1"
+      style="background-color: #343a40"
+      href="{{ url_for('myaccount') }}"
+      role="button"
+      ><img src= ../static/button_images/myaccount3.png width="100px" height="25px"
+      onmouseover="this.src='../static/button_images/myaccount4.png';"
+      onmouseout="this.src='../static/button_images/myaccount3.png';"/></a>
 
-      <!-- Store, 3 and 4 -->
-      <a class="nav-link" href="{{ url_for('store') }}">
-        <img src= ../static/button_images/shop1.png width="100px" height="25px"
-        onmouseover="this.src='../static/button_images/shop2.png';"
-        onmouseout="this.src='../static/button_images/shop1.png';"/>
-      </a>
+      <!-- Shop -->
+      <a
+      class="btn btn-outline-light btn-floating m-1"
+      style="background-color: #343a40"
+      href="{{ url_for('store') }}"
+      role="button"
+      ><img src= ../static/button_images/shop3.png width="100px" height="25px"
+      onmouseover="this.src='../static/button_images/shop4.png';"
+      onmouseout="this.src='../static/button_images/shop3.png';"/></a>
+
     </section>
+    <!-- Section: Social media -->
   </div>
   <!-- Grid container -->
 
