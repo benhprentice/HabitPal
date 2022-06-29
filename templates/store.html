@@ -10,6 +10,14 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='css/style_store.css') }}" type="text/css">
     </head>
     <body>
+        <!---POPUP FOR PURCHASE--->
+        <div class="popup" id="popup">
+        <img src="../static/404-tick.png">
+        <h2>Purchase Complete!</h2>
+        <p>Wonder which new friend you'll get!</p>
+        <button type="button" onclick="closePopup()">CLOSE</button>
+        </div>
+        
         <!-- Navigation-->
           <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="{{ url_for('welcome') }}">Habit Pal!</a>
@@ -75,7 +83,8 @@
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Purchase</a></div>
+                                <div class="text-center"><button type="submit" class= "btn btn-outline-dark mt-auto" onclick="openPopup()">Purchase</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -97,7 +106,8 @@
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Purchase</a></div>
+                                <div class="text-center"><button type="submit" class= "btn btn-outline-dark mt-auto" onclick="openPopup()">Purchase</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -116,7 +126,8 @@
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Purchase</a></div>
+                                <div class="text-center"><button type="submit" class= "btn btn-outline-dark mt-auto" onclick="openPopup()">Purchase</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -138,7 +149,8 @@
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Purchase</a></div>
+                                <div class="text-center"><button type="submit" class= "btn btn-outline-dark mt-auto" onclick="openPopup()">Purchase</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -157,7 +169,8 @@
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Purchase</a></div>
+                                <div class="text-center"><button type="submit" class= "btn btn-outline-dark mt-auto" onclick="openPopup()">Purchase</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -176,7 +189,8 @@
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Purchase</a></div>
+                                <div class="text-center"><button type="submit" class= "btn btn-outline-dark mt-auto" onclick="openPopup()">Purchase</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -200,7 +214,8 @@
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Purchase</a></div>
+                                <div class="text-center"><button type="submit" class= "btn btn-outline-dark mt-auto" onclick="openPopup()">Purchase</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -222,17 +237,30 @@
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Purchase</a></div>
+                                <div class="text-center"><button type="submit" class= "btn btn-outline-dark mt-auto" onclick="openPopup()">Purchase</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
         </section>
+       
         <!-- Footer-->
         <footer class="py-5 bg-dark">
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; HabitPal 2022</p></div>
         </footer>
-      
+    <script>
+    let popup = document.getElementById("popup");
+    
+    function openPopup()
+    {
+        popup.classList.add("open-popup");
+    }
+        function closePopup()
+    {
+        popup.classList.remove("open-popup");
+    }
+        
+    </script>
     </body>
+    
 </html>
