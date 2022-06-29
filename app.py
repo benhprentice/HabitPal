@@ -3,6 +3,7 @@ import re
 import sqlite3
 
 from datetime import timedelta, datetime
+from typing import Counter
 from flask import Flask, jsonify, make_response, redirect, render_template, request, session, url_for, request
 from werkzeug.security import generate_password_hash, check_password_hash
 
@@ -55,6 +56,7 @@ def login():
         if user and check_password_hash(user[2], password):
             session['loggedin'] = True
             session['username'] = user[0]
+            Counter = 0
 
             return redirect(url_for('home'))
         else:
@@ -88,7 +90,7 @@ def login():
             return render_template('login.html')
 
     elif request.method == "POST":
-        msg = 'Please fill all required fields!'
+        message = 'Please fill all required fields!'
     
     return render_template("login.html", message=message)
 
@@ -111,8 +113,16 @@ def home():
         vari = vari * 10
         status = vari + status
         status = int(status)
+        msg = ""
+        global Counter
+
         if status >= 100:
             status = 100
+            if Counter == 0:
+                msg = "You get 200 points!"
+                Counter += 1    
+        else:
+            Counter = 0
 
         if status < 20:
             image = url_for('static',filename ='murg_orange_hurt.png')
@@ -127,7 +137,7 @@ def home():
         else:
             image = url_for('static',filename ='murg_spikey_green.png')
 
-        return render_template("index.html", username=session['username'], status=status, image=image)
+        return render_template("index.html", username=session['username'], status=status, image=image, message=msg)
         
     return render_template("login.html")
 
