@@ -1,7 +1,5 @@
 # Project Name
 
-Ideas:
-
 - Habit Pal
 
 	
@@ -44,7 +42,7 @@ Ideas:
 
 ## General Information
 
-![first image](./images/cute-monster-clipart-6.png)
+![first image](/static/jwa_concept_MURGv5.PNG)
 	
 - What do we wish we had to help complete the project?
 	- A database
