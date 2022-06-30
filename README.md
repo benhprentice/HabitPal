@@ -44,8 +44,7 @@
 ![first image](/static/jwa_concept_MURGv5.PNG)
 	
 - What do we wish we had to help complete the project?
-	- A database
-	- Code for a tamagotchi 
+	- animation capabilities
 
 ## Technologies Used
 - Tech 1 - Visual Studio Code ( https://code.visualstudio.com/ )
@@ -69,7 +68,7 @@ List the ready features here:
 - Feature 3: Avatar Selection 
 	- Users Avatar.
 	- Users can use in game currency to customize their avatar.
-	- We want our user to have their own avarars.
+	- We want our user to have their own avatars.
 
 ## Screenshots
 ![Example screenshot #1](static/screen_shot.png)
@@ -179,6 +178,27 @@ To do:
 - Implement Coherent color theme
 - Bring in pixel pets, integrate with To Do List
 - Fix error triggers and test rigorously 
+
+### Sprint 1:
+
+Ben Prentice
+
+- Completed login/registration backend                 https://cs3398su22betazoids.atlassian.net/browse/CSBP-56
+- Created database tables for animation states         https://cs3398su22betazoids.atlassian.net/browse/CSBP-57
+- Created sessions                                     https://cs3398su22betazoids.atlassian.net/browse/CSBP-59
+- Connected custom 404 page                            https://cs3398su22betazoids.atlassian.net/browse/CSBP-60
+- Connected Flask to "My Account" page                 https://cs3398su22betazoids.atlassian.net/browse/CSBP-61
+- Facilitated avatar "animation" when health changes   https://cs3398su22betazoids.atlassian.net/browse/CSBP-62
+- Connected "Sign Out" button to Flask server          https://cs3398su22betazoids.atlassian.net/browse/CSBP-81
+- Transferred data from JS, finalized database loading https://cs3398su22betazoids.atlassian.net/browse/CSBP-86
+- Fixed bugs       									   https://cs3398su22betazoids.atlassian.net/browse/CSBP-96
+- Created ability to add and display points            https://cs3398su22betazoids.atlassian.net/browse/CSBP-99
+
+- Next steps: add sound when achieve full health
+              link store to database
+			  uncheck to do item will delete item from database
+			  fix footer to bottom of content on "Home" page
+			  to do list linked to accounts, bypass local memory
 
 ## Acknowledgements
 
