@@ -179,7 +179,7 @@ To do:
 - Bring in pixel pets, integrate with To Do List
 - Fix error triggers and test rigorously 
 
-### Sprint 1:
+### Sprint 2:
 
 Ben Prentice
 
@@ -199,6 +199,18 @@ Ben Prentice
 			  uncheck to do item will delete item from database
 			  fix footer to bottom of content on "Home" page
 			  to do list linked to accounts, bypass local memory
+
+Jonathan Andrews
+
+- Complete Avatar Pet Symmetry         				https://cs3398su22betazoids.atlassian.net/browse/CSBP-50
+- Complete Coloring for Pet Avatar     				https://cs3398su22betazoids.atlassian.net/browse/CSBP-51
+- Create Visual Popups for Egg Purchase     		        https://cs3398su22betazoids.atlassian.net/browse/CSBP-52
+- Create Store Landing Page            				https://cs3398su22betazoids.atlassian.net/browse/CSBP-53
+- Add Store Asset Images               				https://cs3398su22betazoids.atlassian.net/browse/CSBP-54
+
+- Next steps: Create Visual Popups for pet stage updates such as level up, point rewards, low health, full health. 
+	      Create artwork for achievements to be placed on account stats page.
+
 
 ## Acknowledgements
 
