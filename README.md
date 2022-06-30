@@ -42,7 +42,7 @@
 
 ## General Information
 
-![first image](/static/jwa_concept_MURGv5.PNG)
+![first image](./static/jwa_concept_MURGv5.PNG)
 	
 - What do we wish we had to help complete the project?
 	- A database
