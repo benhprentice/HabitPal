@@ -72,8 +72,8 @@ List the ready features here:
 	- We want our user to have their own avarars.
 
 ## Screenshots
-![Example screenshot](./img/screenshot.png)
-<!-- If you have screenshots you'd like to share, include them here. -->
+![Example screenshot #1](static/screen_shot.png)
+![Example screenshot #2](static/screen_shot2.png)
 
 
 ## Setup
