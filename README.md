@@ -229,6 +229,20 @@ Irving Donaldson
 			  Update Color Palette/ UI
 
 
+Lu Bai
+- Create welcome page                                   https://cs3398su22betazoids.atlassian.net/browse/CSBP-63
+- Create/Remake buttons                                 https://cs3398su22betazoids.atlassian.net/browse/CSBP-65
+- Create/Remake 404 page                                https://cs3398su22betazoids.atlassian.net/browse/CSBP-79
+- Create store items                                    https://cs3398su22betazoids.atlassian.net/browse/CSBP-68
+- Create more Store items                               https://cs3398su22betazoids.atlassian.net/browse/CSBP-84
+- Test and fix (image fix and login page background)    https://cs3398su22betazoids.atlassian.net/browse/CSBP-92
+
+- Next Steps: Create more items for store (seasonal patch, limited edition items, make changes for feedbacks from users)
+			  Login/Sign up page remake
+			  UI design for all pages
+			  Testing and debugging new codes, as well as study more about back ends and be able to help teammates more
+			  
+
 ## Acknowledgements
 
 
