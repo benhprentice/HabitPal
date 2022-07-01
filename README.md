@@ -242,6 +242,18 @@ Lu Bai
 			  UI design for all pages
 			  Testing and debugging new codes, as well as study more about back ends and be able to help teammates more
 			  
+Sean Angle
+
+- Create image location on home page https://cs3398su22betazoids.atlassian.net/browse/CSBP-74
+- Add location for image on my account page https://cs3398su22betazoids.atlassian.net/browse/CSBP-77
+- Add sign out button on nav bar https://cs3398su22betazoids.atlassian.net/browse/CSBP-78
+- Add sign out button for every page https://cs3398su22betazoids.atlassian.net/browse/CSBP-80
+- Fix footer overlap on home page and my account page https://cs3398su22betazoids.atlassian.net/browse/CSBP-82
+
+- Next Steps: Create optin for user to choose pet with Irving
+			  Implement the three health images for the users pet
+			  Finish footer on home page to stay at bottom of the page all the time
+			  
 
 ## Acknowledgements
 
