@@ -48,9 +48,10 @@
 
 ## Technologies Used
 - Tech 1 - Visual Studio Code ( https://code.visualstudio.com/ )
-- Tech 2 - Python/Flask ( https://flask.palletsprojects.com/en/2.1.x/ (
+- Tech 2 - Python/Flask ( https://flask.palletsprojects.com/en/2.1.x/ )
 - Tech 3 - MySQL ( https://www.mysql.com/ )
-
+- Tech 4 - Javascript ( https://www.javascript.com )
+- Tech 5 - Bootstrap ( https://getbootstrap.com )
 
 ## Features
 List the ready features here:
@@ -210,6 +211,22 @@ Jonathan Andrews
 
 - Next steps: Create Visual Popups for pet stage updates such as level up, point rewards, low health, full health. 
 	      Create artwork for achievements to be placed on account stats page.
+
+Irving Donaldson
+
+- Implement Color Theme								https://cs3398su22betazoids.atlassian.net/browse/CSBP-71                     
+- Health Bar and Task Combining						https://cs3398su22betazoids.atlassian.net/browse/CSBP-72
+- Implement New Symbols/ UI							https://cs3398su22betazoids.atlassian.net/browse/CSBP-73
+- Create Task Bar									https://cs3398su22betazoids.atlassian.net/browse/CSBP-85
+- Implememnt Buttons in Footer						https://cs3398su22betazoids.atlassian.net/browse/CSBP-91
+- Fix Padding Bug on Store Header					https://cs3398su22betazoids.atlassian.net/browse/CSBP-93
+- Put Logo in Header								https://cs3398su22betazoids.atlassian.net/browse/CSBP-95
+
+- Next steps: Create option for user to choose pet
+			  Implement background for pet
+			  Make To Do list page more presentable
+			  Make Account page more presentable
+			  Update Color Palette/ UI
 
 
 ## Acknowledgements
