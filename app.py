@@ -109,6 +109,14 @@ def home():
         year = dateandtime.year
         day = str(month) + "-" + str(day) + "-" + str(year)
         cursor = conn.cursor()
+        # if request.method == "POST":
+        #     jsonData = request.get_json()
+        #     print(jsonData["task"])
+        #     day = str(month) + "-" + str(day) + "-" + str(year)
+        #     cursor.execute('INSERT INTO completedTasks ( username, date, task ) VALUES (?, ?, ?)', 
+        #     (session['username'], day, jsonData["task"],))
+        #     conn.commit()
+
         cursor.execute( 'SELECT * FROM completedTasks WHERE username = ? and date = ?', (session['username'], day,))
         vari = cursor.fetchall()
         vari = len(vari)
