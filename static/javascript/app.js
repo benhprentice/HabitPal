@@ -86,7 +86,7 @@ function addTask() {
     });
 
   // add task to local storage
-  localStorage.setItem("tasks", JSON.stringify([...JSON.parse(localStorage.getItem("tasks") || "[]"), { task: task.value, completed: false }]));
+  // localStorage.setItem("tasks", JSON.stringify([...JSON.parse(localStorage.getItem("tasks") || "[]"), { task: task.value, completed: false }]));
 
   // create list item, add innerHTML and append to ul
   const li = document.createElement("li");
