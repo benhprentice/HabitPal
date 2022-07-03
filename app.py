@@ -104,10 +104,7 @@ def home():
         dateandtime = datetime.now()
         rightNow = dateandtime.hour + ( dateandtime.minute/60 )
         status = ( (24 - rightNow) / 24 ) * 100
-        day = dateandtime.day 
-        month = dateandtime.month
-        year = dateandtime.year
-        day = str(month) + "-" + str(day) + "-" + str(year)
+        day = get_date()
         cursor = conn.cursor()
         cursor.execute( 'SELECT * FROM completedTasks WHERE username = ? and date = ?', (session['username'], day,))
         vari = cursor.fetchall()
@@ -203,13 +200,7 @@ def not_found(e):
 def task_added():
     if request.method == "POST":
         jsonData = request.get_json()
-        print(jsonData["task"])
-
-        dateandtime = datetime.now()
-        day = dateandtime.day
-        month = dateandtime.month
-        year = dateandtime.year
-        day = str(month) + "-" + str(day) + "-" + str(year)
+        day = get_date()
         cursor = conn.cursor()
         cursor.execute('INSERT INTO tasks ( username, date, task ) VALUES (?, ?, ?)', 
             (session['username'], day, jsonData["task"],))
@@ -222,12 +213,7 @@ def task_added():
 def task_completed():
     if request.method == "POST":
         jsonData = request.get_json()
-        print(jsonData["task"])
-        dateandtime = datetime.now()
-        day = dateandtime.day
-        month = dateandtime.month
-        year = dateandtime.year
-        day = str(month) + "-" + str(day) + "-" + str(year)
+        day = get_date()
         cursor = conn.cursor()
         cursor.execute('INSERT INTO completedTasks ( username, date, task ) VALUES (?, ?, ?)', 
             (session['username'], day, jsonData["task"],))
@@ -235,6 +221,15 @@ def task_completed():
         return {
             'response' : 'I am the response'
         }
+
+def get_date():
+    dateandtime = datetime.now()
+    day = dateandtime.day
+    month = dateandtime.month
+    year = dateandtime.year
+    day = str(month) + "-" + str(day) + "-" + str(year)
+    return day
+
 
 if __name__ == "__main__":
     app.run()
