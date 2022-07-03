@@ -129,22 +129,33 @@ function taskComplete(event) {
 }
 
 function removeTask(event) {
-  let tasks = Array.from(JSON.parse(localStorage.getItem("tasks")));
-  //const li = document.getElementById("li");
-  tasks.forEach(task => {
-    if (task.task === event.parentNode.children[1].value) {
-      // delete task
-      tasks.splice(tasks.indexOf(task), 1);
-      var num = tasks.indexOf(task);
-    }
-  });
-
-  //list.removeChild(list.children[0]);
-  //localStorage.setItem("tasks", JSON.stringify(tasks));
-
+      var value = event.previousElementSibling.value;
+      fetch('/task_deleted', {
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        method: 'POST',
+        body: JSON.stringify({
+          'task': value,
+        })
+      })
+        .then(function (response) {
+          if (response.ok) {
+            response.json()
+              .then(function (response) {
+                console.log(response);
+                location.reload();
+              });
+          }
+          else {
+            throw Error('Something went wrong');
+          }
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
   event.parentElement.remove();
-  window.location.reload();
-  //event.parentElement.parentNode.removeChild(event.parentNode);
+  // window.location.reload();
 }
 
 // store current task to track changes

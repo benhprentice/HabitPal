@@ -232,8 +232,7 @@ def task_deleted():
     if request.method == "POST":
         jsonData = request.get_json()
         cursor = conn.cursor()
-        cursor.execute('DELETE FROM tasks WHERE task = ? and username = ?, ( task, username ) VALUES (?, ?)', 
-            (session['username'], jsonData["task"],))
+        cursor.execute('DELETE FROM tasks WHERE username = ? and task = ?', (session['username'], jsonData["task"],)) 
         conn.commit()
         return {
             'response' : 'I am the response'
