@@ -227,6 +227,18 @@ def task_load_to_js():
         tasks = jsonify({ 'tasks' : tasks })
         return tasks
 
+@app.route('/task_deleted', methods = ['POST'])
+def task_deleted():
+    if request.method == "POST":
+        jsonData = request.get_json()
+        cursor = conn.cursor()
+        cursor.execute('DELETE FROM tasks WHERE task = ? and username = ?, ( task, username ) VALUES (?, ?)', 
+            (session['username'], jsonData["task"],))
+        conn.commit()
+        return {
+            'response' : 'I am the response'
+        }
+
 def get_date():
     dateandtime = datetime.now()
     day = dateandtime.day
