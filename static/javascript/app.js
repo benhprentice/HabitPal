@@ -144,7 +144,7 @@ function removeTask(event) {
             response.json()
               .then(function (response) {
                 console.log(response);
-                location.reload();
+                // location.reload();
               });
           }
           else {
@@ -154,7 +154,7 @@ function removeTask(event) {
         .catch(function (error) {
           console.log(error);
         });
-  event.parentElement.remove();
+  event.parentElement.parentElement.remove();
   // window.location.reload();
 }
 
