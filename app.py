@@ -29,6 +29,8 @@ cursor_setup.execute('CREATE TABLE IF NOT EXISTS points(username text, points in
 conn.commit()
 cursor_setup.close()
 
+Counter = 0
+
 @app.route('/')
 def welcome():
     return render_template("welcome.html")
@@ -58,7 +60,6 @@ def login():
         if user and check_password_hash(user[2], password):
             session['loggedin'] = True
             session['username'] = user[0]
-            Counter = 0
 
             return redirect(url_for('home'))
         else:
@@ -146,12 +147,7 @@ def home():
 def myaccount():
     if 'loggedin' in session:
 
-        dateandtime = datetime.now()
-        day = dateandtime.day
-        month = dateandtime.month
-        year = dateandtime.year
-        day = str(month) + "-" + str(day) + "-" + str(year)
-
+        day = get_date()
         cursor = conn.cursor()
         cursor.execute( 'SELECT task FROM completedTasks WHERE username = ? and date = ?', (session['username'], day,))
         tasks = cursor.fetchall()
@@ -175,7 +171,6 @@ def myaccount():
 def logout():
     session.pop('loggedin', None)
     session.pop('username', None)
-
     return redirect(url_for('welcome'))
 
 @app.route('/reset')
@@ -190,7 +185,7 @@ def reset():
         conn.commit()
         cursor.execute('CREATE TABLE completedTasks(username text, date text, task text)')
         conn.commit()
-    return render_template("404.html")
+        return render_template("404.html")
 
 @app.errorhandler(404)  
 def not_found(e):
