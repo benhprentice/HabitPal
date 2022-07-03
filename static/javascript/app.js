@@ -2,8 +2,6 @@
 // On app load, get all tasks from localStorage
 window.onload = loadTasks;
 var i = 0;
-//window.onload = makeProgress;
-
 
 // On form submit add task
 document.querySelector("form").addEventListener("submit", e => {
