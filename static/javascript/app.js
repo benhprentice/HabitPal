@@ -98,13 +98,7 @@ function addTask() {
   task.value = "";
 }
 
-
 function taskComplete(event) {
-  let tasks = Array.from(JSON.parse(localStorage.getItem("tasks")));
-  tasks.forEach(task => {
-    if (task.task === event.nextElementSibling.value) {
-      task.completed = !task.completed;
-
       var value = event.nextElementSibling.value;
       fetch('/task_completed', {
         headers: {
@@ -131,16 +125,12 @@ function taskComplete(event) {
         .catch(function (error) {
           console.log(error);
         });
-    }
-  });
-  localStorage.setItem("tasks", JSON.stringify(tasks));
   event.nextElementSibling.classList.toggle("completed");
 }
 
 function removeTask(event) {
   let tasks = Array.from(JSON.parse(localStorage.getItem("tasks")));
   //const li = document.getElementById("li");
-  window.location.reload();
   tasks.forEach(task => {
     if (task.task === event.parentNode.children[1].value) {
       // delete task
@@ -150,9 +140,10 @@ function removeTask(event) {
   });
 
   //list.removeChild(list.children[0]);
-  localStorage.setItem("tasks", JSON.stringify(tasks));
+  //localStorage.setItem("tasks", JSON.stringify(tasks));
 
   event.parentElement.remove();
+  window.location.reload();
   //event.parentElement.parentNode.removeChild(event.parentNode);
 }
 
