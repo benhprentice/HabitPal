@@ -11,27 +11,27 @@ document.querySelector("form").addEventListener("submit", e => {
 
 function loadTasks() {
 
-
-
-
-/////////////////////////////////////////////
-  // working here
-
   fetch('/task_load_to_js', {
     headers: {
       'Content-Type': 'application/json'
     },
     method: 'GET'
   })
-
     .then(function (response) {
-
       if (response.ok) {
         var tasks = []
         response.json()
           .then(function (response) {
             for (let i = 0; i < response.tasks.length; i++) {
               tasks.push(response.tasks[i][0]);
+              const list = document.getElementById("task-ul");
+              const li = document.createElement("li");
+              li.innerHTML = `<div><input type="checkbox" onclick="taskComplete(this)"
+                class="check" ${tasks.completed ? 'checked' : ''}>
+              <input type="text" value="${tasks[i]}"
+               class="task ${tasks.completed ? 'completed' : ''}" onfocus="getCurrentTask(this)" onblur="editTask(this)">
+              <i class="fa fa-trash" onclick="removeTask(this)"></i></div>`;
+              list.insertBefore(li, list.children[0]);
             }
           });
       }
@@ -47,27 +47,7 @@ function loadTasks() {
   // if (localStorage.getItem("tasks") == null) return;
 
   // Get the tasks from localStorage and convert it to an array
-  // let tasks = Array.from(JSON.parse(localStorage.getItem("tasks")));
-
-  // working here
-///////////////////////////////////////////////
-
-
-
-
-
-
-  // Loop through the tasks and add them to the list
-  response.tasks.forEach(task => {
-    const list = document.getElementById("task-ul");
-    const li = document.createElement("li");
-    li.innerHTML = `<div><input type="checkbox" onclick="taskComplete(this)"
-     class="check" ${task.completed ? 'checked' : ''}>
-    <input type="text" value="${task.task}"
-     class="task ${task.completed ? 'completed' : ''}" onfocus="getCurrentTask(this)" onblur="editTask(this)">
-    <i class="fa fa-trash" onclick="removeTask(this)"></i></div>`;
-    list.insertBefore(li, list.children[0]);
-  });
+  // let tasks = Array.from(JSON.parse(localStorage.getItem("tasks")));  
 }
 
 function addTask() {

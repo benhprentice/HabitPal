@@ -224,8 +224,6 @@ def task_load_to_js():
         cursor = conn.cursor()
         cursor.execute('SELECT task FROM tasks WHERE username = ? and date = ?', (session['username'], day,)) 
         tasks = cursor.fetchall()
-        for i in tasks:
-            print(i[0])
         tasks = jsonify({ 'tasks' : tasks })
         return tasks
 
