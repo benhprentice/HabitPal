@@ -217,6 +217,18 @@ def task_completed():
             'response' : 'I am the response'
         }
 
+@app.route('/task_load_to_js', methods = ['GET'])
+def task_load_to_js():
+    if request.method == "GET":
+        day = get_date()
+        cursor = conn.cursor()
+        cursor.execute('SELECT task FROM tasks WHERE username = ? and date = ?', (session['username'], day,)) 
+        tasks = cursor.fetchall()
+        for i in tasks:
+            print(i[0])
+        tasks = jsonify({ 'tasks' : tasks })
+        return tasks
+
 def get_date():
     dateandtime = datetime.now()
     day = dateandtime.day
@@ -224,7 +236,6 @@ def get_date():
     year = dateandtime.year
     day = str(month) + "-" + str(day) + "-" + str(year)
     return day
-
 
 if __name__ == "__main__":
     app.run()

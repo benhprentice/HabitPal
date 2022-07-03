@@ -10,14 +10,55 @@ document.querySelector("form").addEventListener("submit", e => {
 });
 
 function loadTasks() {
+
+
+
+
+/////////////////////////////////////////////
+  // working here
+
+  fetch('/task_load_to_js', {
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    method: 'GET'
+  })
+
+    .then(function (response) {
+
+      if (response.ok) {
+        var tasks = []
+        response.json()
+          .then(function (response) {
+            for (let i = 0; i < response.tasks.length; i++) {
+              tasks.push(response.tasks[i][0]);
+            }
+          });
+      }
+      else {
+        throw Error('Something went wrong');
+      }
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+
   // check if localStorage has any tasks
-  if (localStorage.getItem("tasks") == null) return;
+  // if (localStorage.getItem("tasks") == null) return;
 
   // Get the tasks from localStorage and convert it to an array
-  let tasks = Array.from(JSON.parse(localStorage.getItem("tasks")));
+  // let tasks = Array.from(JSON.parse(localStorage.getItem("tasks")));
+
+  // working here
+///////////////////////////////////////////////
+
+
+
+
+
 
   // Loop through the tasks and add them to the list
-  tasks.forEach(task => {
+  response.tasks.forEach(task => {
     const list = document.getElementById("task-ul");
     const li = document.createElement("li");
     li.innerHTML = `<div><input type="checkbox" onclick="taskComplete(this)"
