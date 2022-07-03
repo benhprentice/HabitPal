@@ -1,4 +1,3 @@
-//Need to fix saved tasks formating. List elemetes are not deleting after deleting tasks. Js and local storage fixed already
 // On app load, get all tasks from localStorage
 window.onload = loadTasks;
 var i = 0;
@@ -42,12 +41,6 @@ function loadTasks() {
     .catch(function (error) {
       console.log(error);
     });
-
-  // check if localStorage has any tasks
-  // if (localStorage.getItem("tasks") == null) return;
-
-  // Get the tasks from localStorage and convert it to an array
-  // let tasks = Array.from(JSON.parse(localStorage.getItem("tasks")));  
 }
 
 function addTask() {
@@ -142,10 +135,7 @@ function taskComplete(event) {
   });
   localStorage.setItem("tasks", JSON.stringify(tasks));
   event.nextElementSibling.classList.toggle("completed");
-
- 
 }
-
 
 function removeTask(event) {
   let tasks = Array.from(JSON.parse(localStorage.getItem("tasks")));
