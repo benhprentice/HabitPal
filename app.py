@@ -125,7 +125,7 @@ def home():
                 conn.commit() 
         else:
             Counter = 0
-
+        
         if status < 20:
             image = url_for('static',filename ='murg_orange_hurt.png')
         elif status < 40:
@@ -230,7 +230,15 @@ def task_load_to_js():
         cursor = conn.cursor()
         cursor.execute('SELECT task FROM tasks WHERE username = ? and date = ?', (session['username'], day,)) 
         tasks = cursor.fetchall()
-        tasks = jsonify({ 'tasks' : tasks })
+        cursor.execute('SELECT task FROM completedTasks WHERE username = ? and date = ?', (session['username'], day,))
+        two = cursor.fetchall()
+        # find tasks that are checked off
+        checked_tasks = []
+        for i in tasks:
+            if i in two:
+                checked_tasks.append(i[0])
+        tasks = jsonify({ 'tasks' : tasks, 
+                          'check' : checked_tasks })
         return tasks
 
 @app.route('/task_deleted', methods = ['POST'])
