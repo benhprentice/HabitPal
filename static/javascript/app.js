@@ -28,9 +28,6 @@ function loadTasks() {
      class="task ${task.completed ? 'completed' : ''}" onfocus="getCurrentTask(this)" onblur="editTask(this)">
     <i class="fa fa-trash" onclick="removeTask(this)"></i></div>`;
     list.insertBefore(li, list.children[0]);
-    // if (task.completed){
-    //   makeProgress();
-    // }
   });
 }
 
@@ -185,12 +182,4 @@ function editTask(event) {
   localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
-function makeProgress() {
-  var healthBar = document.querySelector(".progress-bar");
-    if(i <= 90){
-      i = i + 10;
-        healthBar.style.width = i + "%";
-        healthBar.innerText = i + "%";
-    }
-}
 
