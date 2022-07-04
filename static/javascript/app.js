@@ -19,8 +19,12 @@ function loadTasks() {
     .then(function (response) {
       if (response.ok) {
         var tasks = []
+        var checked = []
         response.json()
           .then(function (response) {
+            for (let j = 0; j < response.check.length; j++) {
+              checked.push(response.check[j]);
+            }
             for (let i = 0; i < response.tasks.length; i++) {
               tasks.push(response.tasks[i][0]);
               const list = document.getElementById("task-ul");

@@ -237,7 +237,7 @@ def task_load_to_js():
         for i in tasks:
             if i in two:
                 checked_tasks.append(i[0])
-        tasks = jsonify({ 'tasks' : tasks, 
+        tasks = jsonify({ 'tasks' : tasks,
                           'check' : checked_tasks })
         return tasks
 
