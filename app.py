@@ -118,9 +118,9 @@ def home():
 
         if status >= 100:
             status = 100
-            if Counter == 0:
+            if Counter == 1:
                 msg = "You get 200 points!"
-                Counter += 1
+                Counter = 0
                 cursor.execute('INSERT INTO points ( username, points ) VALUES (?, ?)', (session['username'], 200)) 
                 conn.commit() 
         else:
@@ -207,6 +207,8 @@ def task_added():
 @app.route('/task_completed', methods = ['POST'])
 def task_completed():
     if request.method == "POST":
+        global Counter
+        Counter = 1
         jsonData = request.get_json()
         day = get_date()
         cursor = conn.cursor()
