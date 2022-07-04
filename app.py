@@ -4,7 +4,7 @@ import sqlite3
 
 from datetime import timedelta, datetime
 from typing import Counter
-from flask import Flask, jsonify, make_response, redirect, render_template, request, session, url_for, request
+from flask import Flask, jsonify, redirect, render_template, request, session, url_for
 from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)

@@ -9,7 +9,6 @@ document.querySelector("form").addEventListener("submit", e => {
 });
 
 function loadTasks() {
-
   fetch('/task_load_to_js', {
     headers: {
       'Content-Type': 'application/json'
@@ -19,20 +18,24 @@ function loadTasks() {
     .then(function (response) {
       if (response.ok) {
         var tasks = []
-        var checked = []
         response.json()
           .then(function (response) {
-            for (let j = 0; j < response.check.length; j++) {
-              checked.push(response.check[j]);
-            }
             for (let i = 0; i < response.tasks.length; i++) {
+              var checked = '';
+              var completed = '';
               tasks.push(response.tasks[i][0]);
+              for (let j = 0; j < response.check.length; j++) {
+                if (response.check[j] == tasks[i]) {
+                  checked = 'checked'; 
+                  completed = 'completed';
+                } 
+              }
               const list = document.getElementById("task-ul");
               const li = document.createElement("li");
               li.innerHTML = `<div><input type="checkbox" onclick="taskComplete(this)"
-                class="check" ${tasks.completed ? 'checked' : ''}>
+                class="check" ${checked}>
               <input type="text" value="${tasks[i]}"
-               class="task ${tasks.completed ? 'completed' : ''}" onfocus="getCurrentTask(this)" onblur="editTask(this)">
+               class="task ${completed}" onfocus="getCurrentTask(this)" onblur="editTask(this)">
               <i class="fa fa-trash" onclick="removeTask(this)"></i></div>`;
               list.insertBefore(li, list.children[0]);
             }
