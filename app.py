@@ -247,6 +247,10 @@ def reset():
         conn.commit()
         cursor.execute('CREATE TABLE eggs(username text, egg text)')
         conn.commit()
+        cursor.execute ('DROP TABLE IF EXISTS points')
+        conn.commit()
+        cursor.execute('CREATE TABLE points(username text, points int)')
+        conn.commit()
         return render_template("404.html")
 
 @app.errorhandler(404)  
