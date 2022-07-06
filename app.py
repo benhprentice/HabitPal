@@ -45,60 +45,70 @@ def store():
             cursor.execute('INSERT INTO eggs (username, egg) VALUES (?, ?)',
                            (session['username'], url_for('static',filename ='egg1.png')))
             conn.commit()
+            deduct_points()
             return ('', 204)
         if request.method == "POST" and 'egg2' in request.form:
             cursor = conn.cursor()
             cursor.execute('INSERT INTO eggs (username, egg) VALUES (?, ?)',
                            (session['username'], url_for('static',filename ='egg2.png')))
             conn.commit()
+            deduct_points()
             return ('', 204)
         if request.method == "POST" and 'egg3' in request.form:
             cursor = conn.cursor()
             cursor.execute('INSERT INTO eggs (username, egg) VALUES (?, ?)',
                            (session['username'], url_for('static',filename ='egg3.png')))
             conn.commit()
+            deduct_points()
             return ('', 204)
         if request.method == "POST" and 'egg4' in request.form:
             cursor = conn.cursor()
             cursor.execute('INSERT INTO eggs (username, egg) VALUES (?, ?)',
                            (session['username'], url_for('static',filename ='egg4.png')))
             conn.commit()
+            deduct_points()
             return ('', 204)
         if request.method == "POST" and 'egg5' in request.form:
             cursor = conn.cursor()
             cursor.execute('INSERT INTO eggs (username, egg) VALUES (?, ?)',
                            (session['username'], url_for('static',filename ='egg5.png')))
             conn.commit()
+            deduct_points()
             return ('', 204)
         if request.method == "POST" and 'egg6' in request.form:
             cursor = conn.cursor()
             cursor.execute('INSERT INTO eggs (username, egg) VALUES (?, ?)',
                            (session['username'], url_for('static',filename ='egg6.png')))
             conn.commit()
+            deduct_points()
             return ('', 204)
         if request.method == "POST" and 'egg7' in request.form:
             cursor = conn.cursor()
             cursor.execute('INSERT INTO eggs (username, egg) VALUES (?, ?)',
                            (session['username'], url_for('static',filename ='egg7.png')))
             conn.commit()
+            deduct_points()
             return ('', 204)
         if request.method == "POST" and 'egg8' in request.form:
             cursor = conn.cursor()
             cursor.execute('INSERT INTO eggs (username, egg) VALUES (?, ?)',
                            (session['username'], url_for('static',filename ='egg8.png')))
             conn.commit()
+            deduct_points()
             return ('', 204)
         if request.method == "POST" and 'egg9' in request.form:
             cursor = conn.cursor()
             cursor.execute('INSERT INTO eggs (username, egg) VALUES (?, ?)',
                            (session['username'], url_for('static',filename ='egg9.png')))
             conn.commit()
+            deduct_points()
             return ('', 204)
         if request.method == "POST" and 'egg10' in request.form:
             cursor = conn.cursor()
             cursor.execute('INSERT INTO eggs (username, egg) VALUES (?, ?)',
                            (session['username'], url_for('static',filename ='egg10.png')))
             conn.commit()
+            deduct_points()
             return ('', 204)
         return render_template("store.html")
     return render_template("login.html")
@@ -183,7 +193,15 @@ def home():
             if Counter == 1:
                 msg = "You get 200 points!"
                 Counter = 0
-                cursor.execute('INSERT INTO points ( username, points ) VALUES (?, ?)', (session['username'], 200)) 
+                cursor.execute('SELECT points FROM points WHERE username = ?', (session['username'],))
+                points = cursor.fetchone()
+                if points is None:
+                    points = 200
+                else:
+                    points = points[0] + 200
+                cursor.execute('DELETE FROM points WHERE username = ?', (session['username'],))
+                conn.commit()
+                cursor.execute('INSERT INTO points ( username, points ) VALUES (?, ?)', (session['username'], points)) 
                 conn.commit() 
         else:
             Counter = 0
@@ -214,14 +232,14 @@ def myaccount():
         cursor.execute( 'SELECT task FROM completedTasks WHERE username = ? and date = ?', (session['username'], day,))
         tasks = cursor.fetchall()
         cursor.execute( 'SELECT points FROM points WHERE username = ?', (session['username'],))
-        points = cursor.fetchall()
+        points = cursor.fetchone()
+        if points is None:
+            points = 0
+        else:
+            points = points[0]
         cursor.execute( 'SELECT egg FROM eggs WHERE username = ?', (session['username'],))
         eggs = cursor.fetchall()
-        pointsTotal = 0
-        for i in points:
-            pointsTotal += i[0]
-
-        return render_template("myaccount.html", eggs=eggs, tasks=tasks, points=pointsTotal)
+        return render_template("myaccount.html", eggs=eggs, tasks=tasks, points=points)
 
     return render_template("login.html")
 
@@ -327,6 +345,23 @@ def get_date():
     year = dateandtime.year
     day = str(month) + "-" + str(day) + "-" + str(year)
     return day
+
+def deduct_points():
+    cursor = conn.cursor()
+    cursor.execute('SELECT points FROM points WHERE username = ?', (session['username'],))
+    points = cursor.fetchone()
+    if points is None:
+        points = 0
+    elif points[0] >= 1000:
+        points = points[0] - 1000
+    else: 
+        points = points[0]
+    cursor.execute('DELETE FROM points WHERE username = ?', (session['username'],))
+    conn.commit()
+    cursor.execute('INSERT INTO points ( username, points ) VALUES (?, ?)', (session['username'], points)) 
+    conn.commit() 
+    return ('', 204)
+    
 
 if __name__ == "__main__":
     app.run()
