@@ -27,6 +27,8 @@ cursor_setup.execute('CREATE TABLE IF NOT EXISTS completedTasks(username text, d
 conn.commit()
 cursor_setup.execute('CREATE TABLE IF NOT EXISTS points(username text, points int)')
 conn.commit()
+cursor_setup.execute('CREATE TABLE IF NOT EXISTS eggs(username text, egg text)')
+conn.commit()
 cursor_setup.close()
 
 Counter = 0
@@ -35,9 +37,69 @@ Counter = 0
 def welcome():
     return render_template("welcome.html")
 
-@app.route('/store')
+@app.route('/store', methods=['GET', 'POST'])
 def store():
     if 'loggedin' in session:
+        if request.method == "POST" and 'egg1' in request.form:
+            cursor = conn.cursor()
+            cursor.execute('INSERT INTO eggs (username, egg) VALUES (?, ?)',
+                           (session['username'], url_for('static',filename ='egg1.png')))
+            conn.commit()
+            return render_template("store.html")
+        if request.method == "POST" and 'egg2' in request.form:
+            cursor = conn.cursor()
+            cursor.execute('INSERT INTO eggs (username, egg) VALUES (?, ?)',
+                           (session['username'], url_for('static',filename ='egg2.png')))
+            conn.commit()
+            return render_template("store.html")
+        if request.method == "POST" and 'egg3' in request.form:
+            cursor = conn.cursor()
+            cursor.execute('INSERT INTO eggs (username, egg) VALUES (?, ?)',
+                           (session['username'], url_for('static',filename ='egg3.png')))
+            conn.commit()
+            return render_template("store.html")
+        if request.method == "POST" and 'egg4' in request.form:
+            cursor = conn.cursor()
+            cursor.execute('INSERT INTO eggs (username, egg) VALUES (?, ?)',
+                           (session['username'], url_for('static',filename ='egg4.png')))
+            conn.commit()
+            return render_template("store.html")
+        if request.method == "POST" and 'egg5' in request.form:
+            cursor = conn.cursor()
+            cursor.execute('INSERT INTO eggs (username, egg) VALUES (?, ?)',
+                           (session['username'], url_for('static',filename ='egg5.png')))
+            conn.commit()
+            return render_template("store.html")
+        if request.method == "POST" and 'egg6' in request.form:
+            cursor = conn.cursor()
+            cursor.execute('INSERT INTO eggs (username, egg) VALUES (?, ?)',
+                           (session['username'], url_for('static',filename ='egg6.png')))
+            conn.commit()
+            return render_template("store.html")
+        if request.method == "POST" and 'egg7' in request.form:
+            cursor = conn.cursor()
+            cursor.execute('INSERT INTO eggs (username, egg) VALUES (?, ?)',
+                           (session['username'], url_for('static',filename ='egg7.png')))
+            conn.commit()
+            return render_template("store.html")
+        if request.method == "POST" and 'egg8' in request.form:
+            cursor = conn.cursor()
+            cursor.execute('INSERT INTO eggs (username, egg) VALUES (?, ?)',
+                           (session['username'], url_for('static',filename ='egg8.png')))
+            conn.commit()
+            return render_template("store.html")
+        if request.method == "POST" and 'egg9' in request.form:
+            cursor = conn.cursor()
+            cursor.execute('INSERT INTO eggs (username, egg) VALUES (?, ?)',
+                           (session['username'], url_for('static',filename ='egg9.png')))
+            conn.commit()
+            return render_template("store.html")
+        if request.method == "POST" and 'egg10' in request.form:
+            cursor = conn.cursor()
+            cursor.execute('INSERT INTO eggs (username, egg) VALUES (?, ?)',
+                           (session['username'], url_for('static',filename ='egg10.png')))
+            conn.commit()
+            return render_template("store.html")
         return render_template("store.html")
     return render_template("login.html")
 
@@ -153,15 +215,11 @@ def myaccount():
         tasks = cursor.fetchall()
         cursor.execute( 'SELECT points FROM points WHERE username = ?', (session['username'],))
         points = cursor.fetchall()
+        cursor.execute( 'SELECT egg FROM eggs WHERE username = ?', (session['username'],))
+        eggs = cursor.fetchall()
         pointsTotal = 0
         for i in points:
             pointsTotal += i[0]
-
-        eggs=[url_for('static',filename ='egg1.png'), url_for('static',filename ='egg2.png'), 
-        url_for('static',filename ='egg3.png'), url_for('static',filename ='egg4.png'), 
-        url_for('static',filename ='egg5.png'), url_for('static',filename ='egg6.png'), 
-        url_for('static',filename ='egg7.png'), url_for('static',filename ='egg8.png'), 
-        url_for('static',filename ='egg9.png'), url_for('static',filename ='egg10.png')]
 
         return render_template("myaccount.html", eggs=eggs, tasks=tasks, points=pointsTotal)
 
@@ -184,6 +242,10 @@ def reset():
         cursor.execute ('DROP TABLE IF EXISTS completedTasks')
         conn.commit()
         cursor.execute('CREATE TABLE completedTasks(username text, date text, task text)')
+        conn.commit()
+        cursor.execute ('DROP TABLE IF EXISTS eggs')
+        conn.commit()
+        cursor.execute('CREATE TABLE eggs(username text, egg text)')
         conn.commit()
         return render_template("404.html")
 
