@@ -330,17 +330,18 @@ def task_added():
 def task_completed():
     if request.method == "POST":
         global Counter
-        Counter = 1
         jsonData = request.get_json()
         day = get_date()
         cursor = conn.cursor()
         cursor.execute('SELECT task FROM completedTasks WHERE username = ? AND task = ?', (session['username'], jsonData["task"],)) 
         task = cursor.fetchone()
         if task is None:
+            Counter = 1
             cursor.execute('INSERT INTO completedTasks ( username, date, task ) VALUES (?, ?, ?)', 
                 (session['username'], day, jsonData["task"],))
             conn.commit()
         else:
+            Counter = 0
             cursor.execute('DELETE FROM completedTasks WHERE username = ? and task = ?', (session['username'], jsonData["task"],)) 
             conn.commit()
         return {
