@@ -45,61 +45,61 @@ def store():
             cursor.execute('INSERT INTO eggs (username, egg) VALUES (?, ?)',
                            (session['username'], url_for('static',filename ='egg1.png')))
             conn.commit()
-            return render_template("store.html")
+            return ('', 204)
         if request.method == "POST" and 'egg2' in request.form:
             cursor = conn.cursor()
             cursor.execute('INSERT INTO eggs (username, egg) VALUES (?, ?)',
                            (session['username'], url_for('static',filename ='egg2.png')))
             conn.commit()
-            return render_template("store.html")
+            return ('', 204)
         if request.method == "POST" and 'egg3' in request.form:
             cursor = conn.cursor()
             cursor.execute('INSERT INTO eggs (username, egg) VALUES (?, ?)',
                            (session['username'], url_for('static',filename ='egg3.png')))
             conn.commit()
-            return render_template("store.html")
+            return ('', 204)
         if request.method == "POST" and 'egg4' in request.form:
             cursor = conn.cursor()
             cursor.execute('INSERT INTO eggs (username, egg) VALUES (?, ?)',
                            (session['username'], url_for('static',filename ='egg4.png')))
             conn.commit()
-            return render_template("store.html")
+            return ('', 204)
         if request.method == "POST" and 'egg5' in request.form:
             cursor = conn.cursor()
             cursor.execute('INSERT INTO eggs (username, egg) VALUES (?, ?)',
                            (session['username'], url_for('static',filename ='egg5.png')))
             conn.commit()
-            return render_template("store.html")
+            return ('', 204)
         if request.method == "POST" and 'egg6' in request.form:
             cursor = conn.cursor()
             cursor.execute('INSERT INTO eggs (username, egg) VALUES (?, ?)',
                            (session['username'], url_for('static',filename ='egg6.png')))
             conn.commit()
-            return render_template("store.html")
+            return ('', 204)
         if request.method == "POST" and 'egg7' in request.form:
             cursor = conn.cursor()
             cursor.execute('INSERT INTO eggs (username, egg) VALUES (?, ?)',
                            (session['username'], url_for('static',filename ='egg7.png')))
             conn.commit()
-            return render_template("store.html")
+            return ('', 204)
         if request.method == "POST" and 'egg8' in request.form:
             cursor = conn.cursor()
             cursor.execute('INSERT INTO eggs (username, egg) VALUES (?, ?)',
                            (session['username'], url_for('static',filename ='egg8.png')))
             conn.commit()
-            return render_template("store.html")
+            return ('', 204)
         if request.method == "POST" and 'egg9' in request.form:
             cursor = conn.cursor()
             cursor.execute('INSERT INTO eggs (username, egg) VALUES (?, ?)',
                            (session['username'], url_for('static',filename ='egg9.png')))
             conn.commit()
-            return render_template("store.html")
+            return ('', 204)
         if request.method == "POST" and 'egg10' in request.form:
             cursor = conn.cursor()
             cursor.execute('INSERT INTO eggs (username, egg) VALUES (?, ?)',
                            (session['username'], url_for('static',filename ='egg10.png')))
             conn.commit()
-            return render_template("store.html")
+            return ('', 204)
         return render_template("store.html")
     return render_template("login.html")
 
