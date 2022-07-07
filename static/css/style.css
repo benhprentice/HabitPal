@@ -84,6 +84,11 @@ background-blend-mode: multiply;
     width: 55px;
     height: 45px;
   }
+
+  .welcomeYo {
+    height: 100vh;
+    object-fit: cover;
+  }
 }
 
 .app h1 {
