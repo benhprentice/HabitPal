@@ -51,8 +51,12 @@
         </nav>
 
     <div class="jumbotron">
-      <div class="pet-img-homepage">
-        <img src="{{ image }}" width="40%">
+      <div class="pet-img-homepage row">
+        <div class="col-0 col-sm-0 col-md-2 col-lg-3"></div>
+        <div class="col-12 col-sm-12 col-md-8 col-lg-6">
+        <img src="{{ image }}" width="100%">
+        </div>
+        <div class="col-0 col-sm-0 col-md-2 col-lg-3"></div>
       </div>
       <div class="app">
         <progress id="bar" style="width: 75%" style="height: 100px" value="{{ status }}" max="100">32%</progress>
