@@ -89,6 +89,11 @@ background-blend-mode: multiply;
     height: 100vh;
     object-fit: cover;
   }
+
+  .murg {
+    width: 75% !important;
+    position: center !important;
+  }
   
 }
 

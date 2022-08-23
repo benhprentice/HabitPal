@@ -13,7 +13,7 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <a class="nav-link" href="{{ url_for('welcome') }}">
       <img src=../static/button_images/logo.png width="75px" height="75px" />
     </a>
@@ -51,11 +51,11 @@
   </nav>
   <div class="MA-container">
     <div class="row">
-      <div class="col-5">
+      <div class="col-12 col-sm-12 col-md-5 col-lg-5">
         <div class="MA-pet-info">
           <div class="MA-card">
             <br>
-            <img class="card-img-top" src="{{url_for('static',filename ='jwa_concept_MURGv5.PNG')}}"
+            <img class="card-img-top murg" src="{{url_for('static',filename ='jwa_concept_MURGv5.PNG')}}"
               alt="Card image cap">
             <div class="card-body">
               <p class="card-text">Grogglepuss</p>
@@ -73,7 +73,7 @@
           </div>
         </div>
       </div>
-      <div class="col-7">
+      <div class="col-12 col-sm-12 col-md-7 col-lg-7">
         <br>
         <h3>My nest</h3>
         {% for i in eggs %}
