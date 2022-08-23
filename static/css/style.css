@@ -94,6 +94,17 @@ background-blend-mode: multiply;
     width: 75% !important;
     position: center !important;
   }
+
+  .nav-item {
+    text-align: center;
+  }
+
+  .signout {
+    display: flex !important;
+    margin-left: 150px;
+    margin-right: 150px;
+    justify-content: center !important;
+  }
   
 }
 
@@ -279,3 +290,4 @@ background-blend-mode: multiply;
   width: 100%;
   padding-bottom: 1rem!important;
 }
+
