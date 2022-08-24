@@ -110,7 +110,19 @@ background-blend-mode: multiply;
     margin-right: 150px;
     justify-content: center !important;
   }
+
+  #mynest {
+    text-align: center;
+  }
+
+  #eggs {
+    width: 40% !important;
+  }
   
+}
+
+#eggs {
+  width: 20%;
 }
 
 .app h1 {
