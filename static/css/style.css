@@ -91,8 +91,13 @@ background-blend-mode: multiply;
   }
 
   .murg {
-    width: 75% !important;
+    /* width: 75% !important;
     position: center !important;
+    align-items: center !important; */
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 80% !important;
   }
 
   .nav-item {

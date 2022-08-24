@@ -9,6 +9,12 @@
     <title>Store</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style_store.css') }}" type="text/css">
+
+    <!-- This is for the responsive burger box. It may fuck some shit up -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"> </script>
 </head>
 
 <body>
@@ -52,8 +58,8 @@
                     </a>
                 </li>
             </ul>
+            <a href="{{ url_for('logout') }}" class="signout btn btn-dark">Sign Out</a>
         </div>
-        <a href="{{ url_for('logout') }}" class="btn btn-dark">Sign Out</a>
     </nav>
     <!-- Header-->
     <header class="bg-light py-5">
