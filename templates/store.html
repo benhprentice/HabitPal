@@ -19,11 +19,23 @@
 
 <body>
     <!---POPUP FOR PURCHASE--->
-    <div class="popup" id="popup">
+    <!-- <div class="popup" id="popup">
         <img src="../static/404-tick.png">
         <h2>Purchase Complete!</h2>
         <p>Wonder which new friend you'll get!</p>
         <button type="button" onclick="closePopup()">CLOSE</button>
+    </div> -->
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Purchase Complete!</h2>
+            <p>Wonder which new friend you'll get!</p>
+        </div>
+
     </div>
 
     <!-- Navigation-->
@@ -92,8 +104,9 @@
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                             <div class="text-center">
                                 <form method="POST" action="{{ url_for('store') }}">
-                                    <button name="egg1" type="submit" class="btn btn-outline-dark mt-auto"
-                                        onclick="openPopup()">Purchase</button>
+                                    <button name="egg1" id="myBtn1" type="submit"
+                                        class="btn btn-outline-dark mt-auto">Purchase</button>
+                                    <!-- onclick="openPopup()">Purchase</button> -->
                                 </form>
                             </div>
                         </div>
@@ -119,8 +132,9 @@
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                             <div class="text-center">
                                 <form method="POST" action="{{ url_for('store') }}">
-                                    <button name="egg7" type="submit" class="btn btn-outline-dark mt-auto"
-                                        onclick="openPopup()">Purchase</button>
+                                    <button name="egg7" id="myBtn2" type="submit"
+                                        class="btn btn-outline-dark mt-auto">Purchase</button>
+                                    <!-- onclick="openPopup()">Purchase</button> -->
                                 </form>
                             </div>
                         </div>
@@ -143,8 +157,9 @@
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                             <div class="text-center">
                                 <form method="POST" action="{{ url_for('store') }}">
-                                    <button name="egg9" type="submit" class="btn btn-outline-dark mt-auto"
-                                        onclick="openPopup()">Purchase</button>
+                                    <button name="egg9" id="myBtn3" type="submit"
+                                        class="btn btn-outline-dark mt-auto">Purchase</button>
+                                    <!-- onclick="openPopup()">Purchase</button> -->
                                 </form>
                             </div>
                         </div>
@@ -170,8 +185,9 @@
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                             <div class="text-center">
                                 <form method="POST" action="{{ url_for('store') }}">
-                                    <button name="egg2" type="submit" class="btn btn-outline-dark mt-auto"
-                                        onclick="openPopup()">Purchase</button>
+                                    <button name="egg2" id="myBtn4" type="submit"
+                                        class="btn btn-outline-dark mt-auto">Purchase</button>
+                                    <!-- onclick="openPopup()">Purchase</button> -->
                                 </form>
                             </div>
                         </div>
@@ -194,8 +210,9 @@
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                             <div class="text-center">
                                 <form method="POST" action="{{ url_for('store') }}">
-                                    <button name="egg3" type="submit" class="btn btn-outline-dark mt-auto"
-                                        onclick="openPopup()">Purchase</button>
+                                    <button name="egg3" id="myBtn5" type="submit"
+                                        class="btn btn-outline-dark mt-auto">Purchase</button>
+                                    <!-- onclick="openPopup()">Purchase</button> -->
                                 </form>
                             </div>
                         </div>
@@ -218,8 +235,9 @@
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                             <div class="text-center">
                                 <form method="POST" action="{{ url_for('store') }}">
-                                    <button name="egg6" type="submit" class="btn btn-outline-dark mt-auto"
-                                        onclick="openPopup()">Purchase</button>
+                                    <button name="egg6" id="myBtn6" type="submit"
+                                        class="btn btn-outline-dark mt-auto">Purchase</button>
+                                    <!-- onclick="openPopup()">Purchase</button> -->
                                 </form>
                             </div>
                         </div>
@@ -247,8 +265,9 @@
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                             <div class="text-center">
                                 <form method="POST" action="{{ url_for('store') }}">
-                                    <button name="egg5" type="submit" class="btn btn-outline-dark mt-auto"
-                                        onclick="openPopup()">Purchase</button>
+                                    <button name="egg5" id="myBtn7" type="submit"
+                                        class="btn btn-outline-dark mt-auto">Purchase</button>
+                                    <!-- onclick="openPopup()">Purchase</button> -->
                                 </form>
                             </div>
                         </div>
@@ -274,8 +293,9 @@
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                             <div class="text-center">
                                 <form method="POST" action="{{ url_for('store') }}">
-                                    <button name="egg4" type="submit" class="btn btn-outline-dark mt-auto"
-                                        onclick="openPopup()">Purchase</button>
+                                    <button name="egg4" id="myBtn8" type="submit"
+                                        class="btn btn-outline-dark mt-auto">Purchase</button>
+                                    <!-- onclick="openPopup()">Purchase</button> -->
                                 </form>
                             </div>
                         </div>
@@ -301,8 +321,9 @@
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                             <div class="text-center">
                                 <form method="POST" action="{{ url_for('store') }}">
-                                    <button name="egg10" type="submit" class="btn btn-outline-dark mt-auto"
-                                        onclick="openPopup()">Purchase</button>
+                                    <button name="egg10" id="myBtn9" type="submit"
+                                        class="btn btn-outline-dark mt-auto">Purchase</button>
+                                    <!-- onclick="openPopup()">Purchase</button> -->
                                 </form>
                             </div>
                         </div>
@@ -328,8 +349,9 @@
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                             <div class="text-center">
                                 <form method="POST" action="{{ url_for('store') }}">
-                                    <button name="egg8" type="submit" class="btn btn-outline-dark mt-auto"
-                                        onclick="openPopup()">Purchase</button>
+                                    <button name="egg8" id="myBtn10" type="submit"
+                                        class="btn btn-outline-dark mt-auto">Purchase</button>
+                                    <!-- onclick="openPopup()">Purchase</button> -->
                                 </form>
                             </div>
                         </div>
@@ -369,13 +391,111 @@
         </div>
     </footer>
     <script>
-        let popup = document.getElementById("popup");
+        // let popup = document.getElementById("popup");
 
-        function openPopup() {
-            popup.classList.add("open-popup");
+        // function openPopup() {
+        //     popup.classList.add("open-popup");
+        // }
+        // function closePopup() {
+        //     popup.classList.remove("open-popup");
+        // }
+
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn1");
+
+        // When the user clicks on the button, open the modal
+        btn.onclick = function () {
+            modal.style.display = "block";
         }
-        function closePopup() {
-            popup.classList.remove("open-popup");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn2");
+
+        // When the user clicks on the button, open the modal
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn3");
+
+        // When the user clicks on the button, open the modal
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn4");
+
+        // When the user clicks on the button, open the modal
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn5");
+
+        // When the user clicks on the button, open the modal
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn6");
+
+        // When the user clicks on the button, open the modal
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn7");
+
+        // When the user clicks on the button, open the modal
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn8");
+
+        // When the user clicks on the button, open the modal
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn9");
+
+        // When the user clicks on the button, open the modal
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn10");
+
+        // When the user clicks on the button, open the modal
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
         }
 
     </script>
