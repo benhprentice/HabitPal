@@ -12169,9 +12169,15 @@ fieldset:disabled .btn {
 }
 
 .popup {
-  position: relative;
+  /* position: relative;
   display: inline-block;
-  cursor: pointer;
+  cursor: pointer; */
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
 }
 
 
