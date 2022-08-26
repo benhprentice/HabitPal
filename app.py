@@ -203,7 +203,8 @@ def login():
             return render_template('login.html')
 
     elif request.method == "POST":
-        message = 'Please fill all required fields!'
+        # message = 'Please fill all required fields!'
+        message = 'Incorrect username/password'
     
     return render_template("login.html", message=message)
 
