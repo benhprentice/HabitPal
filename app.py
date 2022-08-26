@@ -226,9 +226,12 @@ def home():
         msg = ""
         global Counter
 
+        audio = None
+
         if status >= 100:
             status = 100
             if Counter == 1:
+                audio = "../static/546761__szegvari__cute-creature-sing.wav"
                 msg = "You get 200 points!"
                 Counter = 0
                 cursor.execute('SELECT points FROM points WHERE username = ?', (session['username'],))
@@ -257,7 +260,7 @@ def home():
         else:
             image = url_for('static',filename ='murg_spikey_green.png')
 
-        return render_template("index.html", username=session['username'], status=status, image=image, message=msg)
+        return render_template("index.html", username=session['username'], audio=audio, status=status, image=image, message=msg)
         
     return render_template("login.html")
 
