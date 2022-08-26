@@ -29,6 +29,8 @@ cursor_setup.execute('CREATE TABLE IF NOT EXISTS points(username text, points in
 conn.commit()
 cursor_setup.execute('CREATE TABLE IF NOT EXISTS eggs(username text, egg text)')
 conn.commit()
+cursor_setup.execute('CREATE TABLE IF NOT EXISTS extra(username text, date text, extra int)')
+conn.commit()
 cursor_setup.close()
 
 Counter = 0
@@ -226,12 +228,27 @@ def home():
         status = int(status)
         msg = ""
         global Counter
+        cursor.execute( 'SELECT extra FROM extra WHERE username = ? and date = ?', (session['username'], day,))
+        extra = cursor.fetchone()
+        if extra is None:
+            extra = 0
+        else:
+            extra = extra[0]
 
         audio = None
 
         if status >= 100:
-            status = 100
+            if vari > extra:
+                status = extra + (( (24 - rightNow) / 24 ) * 100)
+                status = int(status)
             if Counter == 1:
+                status = 100
+                extra = 100 - (( (24 - rightNow) / 24 ) * 100) 
+                cursor.execute('DELETE FROM extra WHERE username = ?', (session['username'],)) 
+                conn.commit()
+                cursor.execute('INSERT INTO extra (username, date, extra) VALUES (?, ?, ?)',
+                           (session['username'], day, extra))
+                conn.commit()
                 audio = "../static/546761__szegvari__cute-creature-sing.wav"
                 msg = "You get 200 points!"
                 Counter = 0
@@ -310,6 +327,10 @@ def reset():
         cursor.execute ('DROP TABLE IF EXISTS points')
         conn.commit()
         cursor.execute('CREATE TABLE points(username text, points int)')
+        conn.commit()
+        cursor.execute ('DROP TABLE IF EXISTS extra')
+        conn.commit()
+        cursor.execute('CREATE TABLE extra(username text, date text, extra int)')
         conn.commit()
         return render_template("404.html")
 
