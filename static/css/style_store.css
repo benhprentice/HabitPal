@@ -12295,8 +12295,8 @@ fieldset:disabled .btn {
 @media (min-width:768px) {
 
   .signout {
-    position: fixed;
-    right: 16px;
+    position: absolute;
+    right: 0px;
   }
 }
 

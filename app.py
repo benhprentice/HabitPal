@@ -246,14 +246,19 @@ def home():
         audio = None
 
         if status >= 100:
+
+            # Check if a new task has been added
             if Counter == 1:
                 status = 100
+
+                # Reset health bar at 100
                 extra = 100 - (( (24 - rightNow) / 24 ) * 100) 
                 cursor.execute('DELETE FROM extra WHERE username = ?', (session['username'],)) 
                 conn.commit()
                 cursor.execute('INSERT INTO extra (username, date, extra) VALUES (?, ?, ?)',
                            (session['username'], day, extra))
                 conn.commit()
+                
                 audio = "../static/546761__szegvari__cute-creature-sing.wav"
                 msg = "You get 200 points!"
                 Counter = 0
