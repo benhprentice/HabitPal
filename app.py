@@ -359,7 +359,7 @@ def task_completed():
         jsonData = request.get_json()
         day = get_date()
         cursor = conn.cursor()
-        cursor.execute('SELECT task FROM completedTasks WHERE username = ? AND task = ?', (session['username'], jsonData["task"],)) 
+        cursor.execute('SELECT task FROM completedTasks WHERE username = ? AND task = ? AND date = ?', (session['username'], jsonData["task"], day)) 
         task = cursor.fetchone()
         if task is None:
             Counter = 1
