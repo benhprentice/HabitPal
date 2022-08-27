@@ -234,7 +234,6 @@ def home():
             extra = 0
         else:
             extra = extra[0]
-            status = status + extra
 
         audio = None
 
