@@ -235,6 +235,11 @@ def home():
             extra = extra[0]
             if Counter == 1:
                 extra = extra + 10
+                cursor.execute('DELETE FROM extra WHERE username = ?', (session['username'],)) 
+                conn.commit()
+                cursor.execute('INSERT INTO extra (username, date, extra) VALUES (?, ?, ?)',
+                           (session['username'], day, extra))
+                conn.commit()
             status = extra + status
         status = int(status)
 
