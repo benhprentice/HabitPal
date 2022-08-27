@@ -224,23 +224,23 @@ def home():
         vari = cursor.fetchall()
         vari = len(vari)
         vari = vari * 10
-        status = vari + status
-        status = int(status)
         msg = ""
         global Counter
         cursor.execute( 'SELECT extra FROM extra WHERE username = ? and date = ?', (session['username'], day,))
         extra = cursor.fetchone()
         if extra is None:
             extra = 0
+            status = vari + status
         else:
             extra = extra[0]
+            if Counter == 1:
+                extra = extra + 10
+            status = extra + status
+        status = int(status)
 
         audio = None
 
         if status >= 100:
-            if vari > extra:
-                status = extra + (( (24 - rightNow) / 24 ) * 100)
-                status = int(status)
             if Counter == 1:
                 status = 100
                 extra = 100 - (( (24 - rightNow) / 24 ) * 100) 
