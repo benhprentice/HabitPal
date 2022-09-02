@@ -121,6 +121,23 @@ background-blend-mode: multiply;
   
 }
 
+@media (min-width:769px) and (max-width:1100px) {
+  .murg {
+    /* width: 75% !important;
+    position: center !important;
+    align-items: center !important; */
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 80% !important;
+  }
+
+  #eggs {
+    width: 40% !important;
+  }
+  
+}
+
 #eggs {
   width: 20%;
 }
