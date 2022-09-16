@@ -39,6 +39,10 @@ Counter = 0
 def welcome():
     return render_template("welcome.html")
 
+@app.route('/about')
+def about():
+    return render_template("about.html")
+
 @app.route('/store', methods=['GET', 'POST'])
 def store():
     if 'loggedin' in session:
