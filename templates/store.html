@@ -69,6 +69,13 @@
                             onmouseout="this.src='../static/button_images/shop1.png';" />
                     </a>
                 </li>
+                <li class="nav-item active">
+                    <a class="nav-link scroll-link" href="{{ url_for('about') }}">
+                      <img src=../static/button_images/about1.png width="150px" height="37.5px"
+                        onmouseover="this.src='../static/button_images/about2.png';"
+                        onmouseout="this.src='../static/button_images/about1.png';" />
+                    </a>
+                </li>
             </ul>
             <a href="{{ url_for('logout') }}" class="signout btn btn-dark">Sign Out</a>
         </div>
