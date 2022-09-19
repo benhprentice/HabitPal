@@ -74,6 +74,9 @@ background-blend-mode: multiply;
 
 @media only screen and (max-device-width:600px) {
   .murg {
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
     width: 60% !important;
   }
 }
@@ -103,7 +106,7 @@ background-blend-mode: multiply;
     display: block !important;
     margin-left: auto !important;
     margin-right: auto !important;
-    width: 60% !important;
+    width: 80% !important;
   }
 
   .nav-item {
