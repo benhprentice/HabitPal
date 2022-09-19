@@ -127,9 +127,9 @@ background-blend-mode: multiply;
     position: center !important;
     align-items: center !important; */
     display: block !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    width: 80%;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 80% !important;
   }
 
   #eggs {
@@ -315,12 +315,12 @@ background-blend-mode: multiply;
   padding-bottom: 1rem!important;
 }
 
-@media only screen and (max-device-width:600px) {
+/* @media only screen and (max-device-width:600px) {
   .murg {
     display: block !important;
     margin-left: auto !important;
     margin-right: auto !important;
     width: 60% !important;
   }
-}
+} */
 
