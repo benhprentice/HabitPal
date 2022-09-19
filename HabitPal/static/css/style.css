@@ -246,8 +246,6 @@
   margin-left: 20px;
   width: 28rem;
   float: left;
-
-
 }
 
 .card-text {
@@ -320,7 +318,19 @@
 @media only screen and (max-device-width:600px) {
   .test {
     margin: none;
-    
+  }
+
+  .MA-pet-info {
+    width: auto !important;
+    height: 100%;
+    float: left;
+  }
+  
+  .MA-card {
+    margin-top: 10px;
+    margin-left: 0px !important;
+    width: auto !important;
+    float: left;
   }
 
   .murg {
