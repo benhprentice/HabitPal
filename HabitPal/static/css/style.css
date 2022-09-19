@@ -72,6 +72,55 @@ background-blend-mode: multiply;
   
 }
 
+@media (max-width:600px) {
+  .app {
+    width: 90%;
+    margin: auto;
+  }
+
+  .testing {
+    position:relative; 
+    left: -25px;
+    width: 55px;
+    height: 45px;
+  }
+
+  .welcomeYo {
+    height: 100vh;
+    object-fit: cover;
+  }
+
+  .murg {
+    /* width: 75% !important;
+    position: center !important;
+    align-items: center !important; */
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 60% !important;
+  }
+
+  .nav-item {
+    text-align: center;
+  }
+
+  .signout {
+    display: flex !important;
+    margin-left: 150px;
+    margin-right: 150px;
+    justify-content: center !important;
+  }
+
+  #mynest {
+    text-align: center;
+  }
+
+  #eggs {
+    width: 40% !important;
+  }
+  
+}
+
 @media (max-width:768px) {
   .app {
     width: 90%;
