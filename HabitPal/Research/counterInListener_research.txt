@@ -1,0 +1,7 @@
+The purpose of this research is to understand the best way
+to add a counter of sorts to the click listener so that, when a 
+task is completed, the counter can increment and affect the 
+sprite of our virtual pet. Thankfully, this is more straightforward than 
+I was previously concerned on. This can be done in two ways: attaching the counter
+to the same listener that is in place for completing the task, or counting the completed
+tasks that are in local storage.
