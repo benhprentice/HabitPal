@@ -35,4 +35,5 @@ toml==0.10.2
 tornado==6.1
 trove_classifiers==2022.8.31
 watchdog==2.1.6
+itsdangerous
 
