@@ -20,7 +20,7 @@ flask_babelex==0.9.4
 HTMLParser==0.0.2
 ipython==8.5.0
 ipywidgets==7.6.5
-jnius==1.1.0
+# jnius==1.1.0
 keyring==23.4.0
 lockfile==0.12.2
 lxml==4.8.0
