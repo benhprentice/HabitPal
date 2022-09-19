@@ -18,6 +18,8 @@ db_path = os.path.join(BASE_DIR, "db.sqlite")
 
 conn = sqlite3.connect(db_path, check_same_thread=False)
 
+# sup
+
 cursor_setup = conn.cursor()
 cursor_setup.execute('CREATE TABLE IF NOT EXISTS users(username text, email text, password text)')
 conn.commit()
