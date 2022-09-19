@@ -1,6 +1,7 @@
 import os.path
 import re
 import sqlite3
+import cython
 
 from datetime import timedelta, datetime
 from typing import Counter
