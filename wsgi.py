@@ -1,2 +1,2 @@
-from catalog import getApp
+from HabitPal import getApp
 app = getApp()
