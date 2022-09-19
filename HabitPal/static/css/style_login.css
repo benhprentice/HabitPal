@@ -25,6 +25,10 @@
 
   and (max-device-width: 768px)
   and (-webkit-min-device-pixel-ratio: 2) {
+    .loginBox {
+        zoom: 200%;
+        content: center
+      }
 
 }
 
