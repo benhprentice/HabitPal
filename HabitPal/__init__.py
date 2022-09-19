@@ -1,13 +1,11 @@
 import os.path
 import re
 import sqlite3
-import cython
 
 from datetime import timedelta, datetime
 from typing import Counter
 from flask import Flask, jsonify, redirect, render_template, request, session, url_for
 from werkzeug.security import generate_password_hash, check_password_hash
-from Cython.Build import cythonize
 
 app = Flask(__name__)
 
