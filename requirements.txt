@@ -1,6 +1,7 @@
 gunicorn== 19.9.0
 Flask==1.1.2
 Werkzeug==2.0.3
+Cython
 asgiref==3.5.2
 attr==0.3.2
 attrs==21.4.0
