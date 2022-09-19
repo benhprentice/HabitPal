@@ -1,5 +1,0 @@
-Created a document for our team to go and vote on color palettes
-that I thought would be nice for the project. Once a primary theme is chosen,
-implementation into the website will follow.
-
-https://docs.google.com/document/d/1FHB87HO9rctzIuU6bSpfSXhdHXg3DKsbqii49HmicUM/edit
