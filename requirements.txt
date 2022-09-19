@@ -1,5 +1,5 @@
 gunicorn
-Flask==1.1.2
+Flask
 Werkzeug==2.0.3
 Cython
 asgiref==3.5.2
