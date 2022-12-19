@@ -2,6 +2,7 @@
 
 - Habit Pal
 
+Link (https://habitpal.herokuapp.com/)
 	
 ### Team Members:
 - Jonathan Andrews
