@@ -1,3 +1,3 @@
-from HabitPal import sqlite3
+from HabitPal import conn
 
-sqlite3.create_all()
+conn.create_all()
