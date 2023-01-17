@@ -13,12 +13,12 @@ app.secret_key = 'Flask%Crud#Application'
 
 app.permanent_session_lifetime = timedelta(minutes=10)
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-# BASE_DIR = os.environ.get('DATABASE_URL')
+# # BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 # db_path = os.path.join(BASE_DIR, "db.sqlite")
-db_path = os.path.join(BASE_DIR, 'DATABASE_URL')
+# conn = sqlite3.connect(db_path, check_same_thread=False)
 
-conn = sqlite3.connect(db_path, check_same_thread=False)
+BASE_DIR = os.environ.get('DATABASE_URL')
+conn = sqlite3.connect(BASE_DIR, check_same_thread=False)
 
 # sup
 
