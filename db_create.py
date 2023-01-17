@@ -1,3 +1,3 @@
 from HabitPal import sqlite3
 
-sqlite3.creat_all()
+sqlite3.create_all()
