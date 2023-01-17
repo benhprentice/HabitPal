@@ -1,3 +1,3 @@
-from HabitPal import db_path
+from HabitPal import sqlite3
 
-db_path.creat_all()
+sqlite3.creat_all()
