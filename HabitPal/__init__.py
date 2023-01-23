@@ -21,7 +21,7 @@ app.permanent_session_lifetime = timedelta(minutes=10)
 # db_path = os.path.join(BASE_DIR, "db.sqlite")
 # conn = sqlite3.connect(db_path, check_same_thread=False)
 
-DATABASE_URL = os.environ.get['DATABASE_URL']
+DATABASE_URL = os.environ['DATABASE_URL']
 conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 
 cursor_setup = conn.cursor()
