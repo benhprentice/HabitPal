@@ -1,7 +1,7 @@
 import os.path
 import re
 import sqlite3
-
+import psycopg2
 from datetime import timedelta, datetime
 from typing import Counter
 from flask import Flask, jsonify, redirect, render_template, request, session, url_for
@@ -17,9 +17,12 @@ app.permanent_session_lifetime = timedelta(minutes=10)
 # db_path = os.path.join(BASE_DIR, "db.sqlite")
 # conn = sqlite3.connect(db_path, check_same_thread=False)
 
-BASE_DIR = os.environ.get('DATABASE_URL')
-db_path = os.path.join(BASE_DIR, "db.sqlite")
-conn = sqlite3.connect(db_path, check_same_thread=False)
+# BASE_DIR = os.environ.get('DATABASE_URL')
+# db_path = os.path.join(BASE_DIR, "db.sqlite")
+# conn = sqlite3.connect(db_path, check_same_thread=False)
+
+DATABASE_URL = os.environ['DATABASE_URL']
+conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 
 cursor_setup = conn.cursor()
 cursor_setup.execute('CREATE TABLE IF NOT EXISTS users(username text, email text, password text)')

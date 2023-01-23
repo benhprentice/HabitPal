@@ -1,3 +1,3 @@
-from HabitPal import db_path
+from HabitPal import DATABASE_URL
 
-db_path.create_all()
+DATABASE_URL.create_all()
