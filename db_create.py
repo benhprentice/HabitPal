@@ -1,3 +1,3 @@
-from HabitPal import conn
+from HabitPal import db_path
 
-conn.create_all()
+db_path.create_all()
