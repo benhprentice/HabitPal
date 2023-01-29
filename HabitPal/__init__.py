@@ -6,7 +6,7 @@ import sys
 import json
 from datetime import timedelta, datetime
 from typing import Counter
-from flask_sqlalchemy import SQLAlchemy
+# from flask_sqlalchemy import SQLAlchemy
 from flask import Flask, jsonify, redirect, render_template, request, session, url_for
 from werkzeug.security import generate_password_hash, check_password_hash
 
@@ -36,7 +36,7 @@ app.permanent_session_lifetime = timedelta(minutes=10)
 # db_path = os.path.join(BASE_DIR, "db.sqlite")
 # conn = sqlite3.connect(db_path, check_same_thread=False)
 
-DATABASE_URL = os.environ('DATABASE_URL')
+DATABASE_URL = os.environ['DATABASE_URL']
 conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 
 
