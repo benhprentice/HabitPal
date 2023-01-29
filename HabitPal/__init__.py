@@ -2,10 +2,23 @@ import os.path
 import re
 import sqlite3
 import psycopg2
+import sys
+import json
 from datetime import timedelta, datetime
 from typing import Counter
+from flask_sqlalchemy import SQLAlchemy
 from flask import Flask, jsonify, redirect, render_template, request, session, url_for
 from werkzeug.security import generate_password_hash, check_password_hash
+
+
+
+# from flask_heroku import Heroku
+# app = Flask( __name__ )
+# app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+# heroku = Heroku(app)
+# db = SQLAlchemy(app)
+
+
 
 app = Flask(__name__)
 
@@ -13,16 +26,20 @@ app.secret_key = 'Flask%Crud#Application'
 
 app.permanent_session_lifetime = timedelta(minutes=10)
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-db_path = os.path.join(BASE_DIR, "db.sqlite")
-conn = sqlite3.connect(db_path, check_same_thread=False)
+# BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+# db_path = os.path.join(BASE_DIR, "db.sqlite")
+# conn = sqlite3.connect(db_path, check_same_thread=False)
+
+
 
 # BASE_DIR = os.environ.get('DATABASE_URL')
 # db_path = os.path.join(BASE_DIR, "db.sqlite")
 # conn = sqlite3.connect(db_path, check_same_thread=False)
 
-# DATABASE_URL = os.environ('DATABASE_URL')
-# conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+DATABASE_URL = os.environ('DATABASE_URL')
+conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+
+
 
 cursor_setup = conn.cursor()
 cursor_setup.execute('CREATE TABLE IF NOT EXISTS users(username text, email text, password text)')
